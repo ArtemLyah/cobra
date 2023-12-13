@@ -24,10 +24,12 @@ export const App = () => {
   );
 
   return (
-    <div className="App">
-      <p>List of users</p>
-      { renderedUsers }
-    </div>
+    <React.StrictMode>
+      <div className="App">
+        <p>List of users</p>
+        { renderedUsers }
+      </div>
+    </React.StrictMode>
   );
 };
 
