@@ -1,7 +1,7 @@
 import config from '../config/config';
 
-export const BASE = `http://${config.API_URL}:${config.API_PORT}/api`;
+export const API = `http://${config.API_URL}:${config.API_PORT}/api`;
 
 // users
-export const USERS = BASE + '/users';
+export const USERS = API + '/users';
 export const GET_ALL_USERS = USERS;
