@@ -1,34 +1,32 @@
 import React, { useState } from 'react';
-import { Navbar, Container, Nav, Button, NavDropdown } from 'react-bootstrap';
-// const [currentMenu, setCurrMenu] = useState(0);
+import { Navbar, Container, Nav, Button, Image, Stack } from 'react-bootstrap';
+import { useAuth } from '../hooks/useAuth';
 
 export const Menu = () => {
+  const { user } = useAuth();
+
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar bg="dark" data-bs-theme="dark" collapseOnSelect expand="lg" className="bg-body-tertiary" style={{ backgroundColor: '#1D1D2A' }}>
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Nav.Link href="#home">
+          <Image src="https://shorturl.at/bvxLO" class="img-fluid" width="45px" height="45px" rounded />
+        </Nav.Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+          <Nav className="me-auto nav nav-underline">
+            <Nav.Link href="#features">Home</Nav.Link>
+            <Nav.Link href="#features">About</Nav.Link>
+            <Nav.Link href="#pricing">FAQ</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link>
+            { user ? 
+              <Button variant="success"> Profile</Button>
+              : 
+              <Stack direction="horizontal" gap={2}>
+                <Button variant="success"> Sign up </Button>
+                <Button variant="success"> Log in </Button>
+              </Stack>
+            }
           </Nav>
         </Navbar.Collapse>
       </Container>
