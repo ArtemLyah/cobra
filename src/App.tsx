@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { apiUsers } from './api/services/users';
 import { User } from './api/types/users';
+import { Menu } from './components/menu.jsx';
 
 export const App = () => {
   const [users, setUsers] = useState([] as User[]);
