@@ -23,9 +23,9 @@ export const MenuLoggedIn = () => {
           <Nav>
             <Dropdown>
               <Dropdown.Toggle id="user-profile-dropdown">
-                <Image src="https://shorturl.at/hjES1" class="img-fluid" width="45px" height="45px" rounded />
+                <Image src="https://shorturl.at/hjES1" className="img-fluid" width="45px" height="45px" rounded />
               </Dropdown.Toggle>
-              <Dropdown.Menu className="user-profile-menu" variant="dark" bg="dark">
+              <Dropdown.Menu className="user-profile-menu" variant="dark">
                 <Dropdown.Item eventKey="1">My profile</Dropdown.Item>
                 <Dropdown.Item eventKey="2">Create map</Dropdown.Item>
                 <Dropdown.Item eventKey="3">Maps</Dropdown.Item>

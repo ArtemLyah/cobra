@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Container, Nav, Button, Image, Stack, Dropdown } from 'react-bootstrap';
 import { useAuth } from '../hooks/useAuth';
 
-export const Menu = () => {
+export const MenuComponent = () => {
   const { user } = useAuth();
 
   return (
@@ -22,9 +22,9 @@ export const Menu = () => {
             { user ? 
               <Dropdown>
                 <Dropdown.Toggle id="user-profile-dropdown">
-                  <Image src="https://shorturl.at/hjES1" class="img-fluid" width="45px" height="45px" rounded />
+                  <Image src="https://shorturl.at/hjES1" className="img-fluid" width="45px" height="45px" rounded />
                 </Dropdown.Toggle>
-                <Dropdown.Menu className="user-profile-menu" variant="dark" bg="dark">
+                <Dropdown.Menu className="user-profile-menu" variant="dark">
                   <Dropdown.Item eventKey="1">My profile</Dropdown.Item>
                   <Dropdown.Item eventKey="2">Create map</Dropdown.Item>
                   <Dropdown.Item eventKey="3">Maps</Dropdown.Item>
@@ -44,4 +44,4 @@ export const Menu = () => {
   );
 };
 
-export default Menu;
+export default MenuComponent;

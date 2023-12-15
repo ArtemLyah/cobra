@@ -1,16 +1,14 @@
 import React from 'react';
-import { Menu } from './components/menu.jsx';
-import { Outlet } from 'react-router';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import MenuComponent from './components/menu';
+import { Outlet } from 'react-router';
 
 export const App = () => {
   return (
-    <>
-      <Menu />
+    <React.StrictMode>
+      <MenuComponent/>
       <Outlet/>
-    </>
+    </React.StrictMode>
   );
 };
 
