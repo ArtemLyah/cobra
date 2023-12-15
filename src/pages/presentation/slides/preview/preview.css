@@ -1,0 +1,9 @@
+.previewSlide {
+  height:100vh;
+  background-image: url('https://cdn.pixabay.com/photo/2020/05/07/04/01/digitization-5140071_1280.jpg');
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #D5D5D5;
+  display: flex;
+}

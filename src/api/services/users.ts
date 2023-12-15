@@ -5,7 +5,7 @@ import { User } from '../types/users';
 class ApiUsers {
   async getAll (): Promise<User[]> {
     const res = await axios.get(urls.GET_ALL_USERS);
-    return res.data as User[];
+    return res.data.users as User[];
   }
 }
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { apiUsers } from './api/services/users';
 import { User } from './api/types/users';
+import PresentationPage from './pages/presentation/presentation.page';
 
 export const App = () => {
   const [users, setUsers] = useState([] as User[]);
@@ -19,16 +20,12 @@ export const App = () => {
     <li key={ user.id }>
       <p>{ user.id }</p>
       <p>{ user.email }</p>
-      <p>{ user.passwordHash }</p>
     </li>
   );
 
   return (
     <React.StrictMode>
-      <div className="App">
-        <p>List of users</p>
-        { renderedUsers }
-      </div>
+      <PresentationPage/>
     </React.StrictMode>
   );
 };
