@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Navbar, Container, Nav, Button, Image, Stack } from 'react-bootstrap';
+import React from 'react';
+import { Navbar, Container, Nav, Button, Image, Stack, Dropdown } from 'react-bootstrap';
 import { useAuth } from '../hooks/useAuth';
 
 export const Menu = () => {
@@ -8,19 +8,29 @@ export const Menu = () => {
   return (
     <Navbar bg="dark" data-bs-theme="dark" collapseOnSelect expand="lg" className="bg-body-tertiary" style={{ backgroundColor: '#1D1D2A' }}>
       <Container>
-        <Nav.Link href="#home">
-          <Image src="https://shorturl.at/bvxLO" class="img-fluid" width="45px" height="45px" rounded />
+        <Nav.Link href="/">
+          <Image src="https://shorturl.at/bvxLO" className="img-fluid" width="45px" height="45px" rounded />
         </Nav.Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto nav nav-underline">
-            <Nav.Link href="#features">Home</Nav.Link>
-            <Nav.Link href="#features">About</Nav.Link>
-            <Nav.Link href="#pricing">FAQ</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="/faq">FAQ</Nav.Link>
           </Nav>
           <Nav>
             { user ? 
-              <Button variant="success"> Profile</Button>
+              <Dropdown>
+                <Dropdown.Toggle id="user-profile-dropdown">
+                  <Image src="https://shorturl.at/hjES1" class="img-fluid" width="45px" height="45px" rounded />
+                </Dropdown.Toggle>
+                <Dropdown.Menu className="user-profile-menu" variant="dark" bg="dark">
+                  <Dropdown.Item eventKey="1">My profile</Dropdown.Item>
+                  <Dropdown.Item eventKey="2">Create map</Dropdown.Item>
+                  <Dropdown.Item eventKey="3">Maps</Dropdown.Item>
+                  <Dropdown.Item eventKey="4">Log out</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
               : 
               <Stack direction="horizontal" gap={2}>
                 <Button variant="success"> Sign up </Button>

@@ -8,7 +8,7 @@ export const MenuLoggedIn = () => {
     <Navbar  bg="dark" data-bs-theme="dark" collapseOnSelect expand="lg" className="bg-body-tertiary" style={{ backgroundColor: '#1D1D2A' }}>
       <Container>
         <Nav.Link href="#home">
-          <Image src="https://shorturl.at/bvxLO" class="img-fluid" width="45px" height="45px" rounded />
+          <Image src="https://shorturl.at/bvxLO" className="img-fluid" width="45px" height="45px" rounded />
         </Nav.Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -17,8 +17,8 @@ export const MenuLoggedIn = () => {
             <NavDropdown title="My maps" id="collapsible-nav-dropdown">
               <NavDropdown.Item href="#map1">Not Found</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#features">About</Nav.Link>
-            <Nav.Link href="#pricing">FAQ</Nav.Link>
+            <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link href="#faq">FAQ</Nav.Link>
           </Nav>
           <Nav>
             <Dropdown>

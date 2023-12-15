@@ -1,15 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-// хз чому але eslint кричить на бібліотеку 
 import { useState } from 'react';
 import Cookies from 'universal-cookie';
 
 export const useCookie = () => {
   const cookie = new Cookies(null, { path:'/' });
 
-  const [value, setValue] = useState<string | null>(null);
+  const [value, setValue] = useState('');
   
   const setItem = (name: string, value: string) => {
     cookie.set(name, value, { path: '/' });
@@ -25,7 +20,7 @@ export const useCookie = () => {
 
   const removeItem = (name: string) =>{
     cookie.remove(name);
-    setValue(null);
+    setValue('');
   };
 
   return { value, setItem, getItem, removeItem };

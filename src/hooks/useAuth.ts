@@ -1,8 +1,7 @@
-import { useEffect, useContext } from 'react';
+import { useEffect } from 'react';
 import { useUser } from './useUser';
-import { User } from './User';
+import { User } from '../types/user.type';
 import { useCookie } from './useCookie';
-import { AuthContext } from '../context/AuthContext';
 
 export const useAuth = () => {
   const { user, addUser, removeUser, setUser } = useUser();

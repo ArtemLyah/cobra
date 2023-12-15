@@ -1,7 +1,7 @@
-import { User } from './User';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useCookie } from './useCookie';
+import { User } from '../types/user.type';
 
 export const useUser = () => {
   const { user, setUser } = useContext(AuthContext);
