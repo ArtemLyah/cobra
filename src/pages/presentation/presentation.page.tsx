@@ -5,6 +5,8 @@ import DevelopersSlide from './slides/developers/developers.slide';
 import PreviewSlide from './slides/preview/preview.slide';
 import TargetAudienceSlide from './slides/targetAudience/targetAudience.slide';
 import WhoWeAreSlide from './slides/who-we-are/whoWeAre.slide';
+import ContactUsSlide from './slides/contact-us/contact_us.slide';
+
 import './presentation.css';
 
 const PresentationPage = () => {
@@ -16,6 +18,7 @@ const PresentationPage = () => {
         <TargetAudienceSlide/>
         <DevelopersSlide/>
         <WhoWeAreSlide/>
+        <ContactUsSlide/>
       </Stack >
     </Container>
   );

@@ -1,0 +1,136 @@
+.description-slide{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    align-items: center;
+    justify-items: center
+}
+
+.description-text{
+    font-family: Lexend;
+    font-size: x-large;
+    line-height: 2rem;
+    color: #d5d5d5;
+    text-align: justify;
+}
+
+.description{
+    margin: 0;
+    padding: 0;
+    
+}
+
+#desc-img{
+    object-fit: fill;
+    border-radius: 25px;
+    width: 450px; 
+    height: 500px;
+}
+
+/* #try{
+    text-align: justify;
+    display: inline-block;
+} */
+
+/* 2xl */
+@media (max-width: 1536px) {
+    .description-slide {
+      max-width: 1280px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 50px;
+      grid-row-gap: 0px;
+    }
+
+    .description-text{
+        font-size: x-large;
+    }
+  }
+  
+  /* xl */
+  @media (max-width: 1280px) {
+    .description-slide {
+      max-width: 1024px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 50px;
+      grid-row-gap: 0px;
+    }
+
+    .description-text{
+        font-size: x-large;
+    }
+
+    #desc-img{
+        width: 350px; 
+        height: 400px;
+    }
+  }
+  
+  /* lg */
+  @media (max-width: 1024px) {
+    .description-slide {
+      max-width: 768px;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 50px;
+      grid-row-gap: 0px;
+    }
+
+    .description-text{
+        font-size: large;
+    }
+
+    #desc-img{
+        width: 250px; 
+        height: 300px;
+    }
+  }
+  
+  /* md */
+  @media (max-width: 768px) {
+    .description-slide {
+      max-width: 640px;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 50px;
+      grid-row-gap: 0px;
+    }
+
+    .description-text{
+        font-size: small;
+    }
+
+    #desc-img{
+        width: 150px; 
+        height: 200px;
+    }
+  }
+  
+  /* sm */
+  @media (max-width: 640px) {
+    .description-slide {
+      max-width: 475px;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 50px;
+      grid-row-gap: 0px;
+    }
+
+    .description-text{
+        font-size: smaller;
+    }
+
+    #desc-img{
+        width: 150px; 
+        height: 200px;
+    }
+  }
+  
+  /* xs */
+  @media (max-width: 475px) {
+    .description-slide {
+      width: 100%;
+    }
+  }
