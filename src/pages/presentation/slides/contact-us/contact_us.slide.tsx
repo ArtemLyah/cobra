@@ -1,17 +1,18 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
+import './contact_us.css';
 
 const ContactUsSlide = () => {
-  return <Container className='justify-content-center contactUs'>
+  return <Container className='contactUs'>
     <Row>
-      <Col  className='contactUs__question'>
+      <Col  className='contactUsQuestion'>
         <h3>Have some questions?</h3>
-        <Row>
-          <h5>Look in FAQ</h5>
-
+        <Row className='row contactUsQuestionFAQ'>
+          <h5 className='col'>Look in FAQ</h5>
+          <div className='col containerForButton justify-content-center'>Here</div>
         </Row>
       </Col>
-      <Col className='contactUs__contact'>
+      <Col className='contactUsContact'>
         <h3>OR CONTACT US:</h3>
         <h5>Form or link to contact us</h5>
       </Col>

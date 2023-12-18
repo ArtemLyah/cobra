@@ -1,9 +1,43 @@
 .contactUs{
- color: #d5d5d5;
+  color: #d5d5d5;
+  display: flex;
+  width: 100%;
 }
-.contactUs__questions{
+.contactUsQuestion{
+  height: 250px;
+  width: 280px;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 50px 0;
+  margin: 0 330px 0 130px;
+}
+.contactUsContact{
+  height: 250px;
+  min-width: 280px;
+  width: auto;
+  background-color: #383837;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 50px 0;
+  margin: 0 130px 0 130px;
+}
+.contactUsQuestionFAQ{
+  display: grid;
+}
+.containerForButton{
+  width: 144px;
+  border-radius: 27px;
+  background-color: #70C548;
+}
 
-}
-.contactUs__contact{
-  background-color: #383837;  
+@media (max-width: 990px) {
+  .contactUsContact{
+    margin: 0 70px 0 70px;
+  }
+  .contactUsQuestion{
+    margin: 0 70px 0 70px;
+  }
 }
