@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './back-to-top.css';
 
 const BackToTop = () => {
-  const [backToTop, setBackToTop] = useState(false);
+  const [ backToTop, setBackToTop ] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {

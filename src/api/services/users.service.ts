@@ -1,11 +1,10 @@
-import axios, { AxiosResponse } from 'axios';
-import * as urls from '../../utils/urls';
-import { User, UsersResponse } from '../../types/user.type';
+import { AxiosAdapter } from '../AxiosAdapter';
+import { url } from '../urls';
+import { UserList } from '../types/user';
 
 class ApiUsers {
-  async getAll (): Promise<User[]> {
-    const res = await axios.get<any, AxiosResponse<UsersResponse>>(urls.GET_ALL_USERS);
-    return res.data.users;
+  async getAll (): Promise<UserList> {
+    return AxiosAdapter.get<UserList>(url.GET_ALL_USERS).fetchData();
   }
 }
 

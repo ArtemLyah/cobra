@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 import './footer.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currYear = new Date().getFullYear();
@@ -14,19 +14,19 @@ const Footer = () => {
           <Col className='col-xl-3 col-md-4 col-sm-4 col-xs-6 link'>
             <h5>Navigation</h5>
             <ul>
-              <li><a href='/'>Home Page</a></li>
-              <li><a href='/about'>About Us</a></li>
-              <li><a href='/#search'>Find Roadmaps</a></li>
-              <li><a href='/profile'>Manage Profile</a></li>
+              <li><Link to='/'>Home Page</Link></li>
+              <li><Link to='/about'>About Us</Link></li>
+              <li><Link to='/#search'>Find Roadmaps</Link></li>
+              <li><Link to='/profile'>Manage Profile</Link></li>
             </ul>
           </Col>
           <Col className='col-xl-3 col-md-4 col-sm-4 col-xs-6 link'>
             <h5>Resources</h5>
             <ul>
-              <li><a href='#'>Terms & Conditions</a></li>
-              <li><a href='#'>Privacy</a></li>
-              <li><a href='#'>Cookies Declaration</a></li>
-              <li><a href='#'>FAQ</a></li>
+              <li><Link to='#'>Terms & Conditions</Link></li>
+              <li><Link to='#'>Privacy</Link></li>
+              <li><Link to='#'>Cookies Declaration</Link></li>
+              <li><Link to='#'>FAQ</Link></li>
             </ul>
           </Col>
           <Col className='col-xl-2 col-md-4 col-sm-4 col-xs-6 link'>
@@ -35,8 +35,8 @@ const Footer = () => {
               <i className='fa-brands fa-github'/>
             </div>
             <ul>
-              <li><a href='http://surl.li/ougvw' target='_blank' rel="noreferrer">Front End</a></li>
-              <li><a href='http://surl.li/ougwc' target='_blank' rel="noreferrer">Back End</a></li>
+              <li><Link to='https://github.com/ArtemLyah/cobra-front' target='_blank' rel="noreferrer">Front End</Link></li>
+              <li><Link to='https://github.com/ArtemLyah/cobra-back' target='_blank' rel="noreferrer">Back End</Link></li>
             </ul>
           </Col>
           <Col className='col-xl-4 col-md-12 col-sm-12 col-xs-12 contact'>
@@ -44,12 +44,6 @@ const Footer = () => {
               <h3>Code Branch</h3>
               <h6>Code and share your experience</h6>
             </div>
-            <form className='contact-us'>
-              <p>Contact us via e-mail</p>
-              <input type='email'  placeholder='Your e-mail'/>
-              <button type='submit'>Send</button>
-            </form>
-
           </Col>
         </div>
         
