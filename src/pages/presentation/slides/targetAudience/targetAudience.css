@@ -1,0 +1,44 @@
+.targetAudienceSlide {
+  color: aliceblue;
+  text-align: center;
+  justify-content: center;
+  margin: 6vh 0 2vh 0; /* top right bot left*/
+}
+
+.img-cols {
+  margin: 0 4vh 0 0;
+}
+.img-row{
+  justify-content: center;
+  max-width: 100%;
+}
+
+.img-target-audience{
+  margin: 6vh 0 2vh 0; /* top right bot left*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  object-fit: cover;
+}
+
+#desc-text{
+  margin: 20vh 0 0 0; /* top right bot left*/
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: x-large;
+  padding: 0;
+}
+
+.glass{
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border:1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
