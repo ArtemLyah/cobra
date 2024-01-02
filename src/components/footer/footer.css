@@ -1,0 +1,109 @@
+.wrapper {
+    height: auto;
+    background-color: #1D1D2A;
+    color: #D5D5D5;
+}
+
+.footer {
+    height: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 30px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .col{
+    margin-bottom: 30px;
+}
+
+
+.footer h5 {
+    font-weight: 700;
+    color: #e7e7e7
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.footer li{
+    margin-bottom: 30px;
+}
+
+.footer li a{
+    text-decoration: none;
+    color: #d5d5d5;
+}
+
+.footer li a:hover{
+    text-decoration: underline;
+}
+
+
+.footer .copy {
+    margin-top: auto;
+    text-align: center;
+}
+
+.footer .copy hr{
+    border-color: #d5d5d5;
+    border-width: 2px;
+}
+
+
+.name-slogan{
+    margin-bottom: 40px;
+}
+
+.contact-us{
+    font-weight: 500;
+}
+
+.contact-us input{
+    background-color: #d9d9d9;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 3px 30px 3px 30px;
+    color: #1D1D2A;
+}
+
+.gh {
+    display:flex;
+}
+
+.gh i {
+    margin-left: 5px;
+    font-size: 26px;
+}
+
+.contact-us button{
+    background: #75D04A;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 5px;
+    margin-top: 0px;
+    padding: 3px 10px 3px 10px;
+}
+
+.contact-us button:hover {
+    background-color: #64b140 ;
+    transform: scale(1.02); 
+}
+
+.contact-us button:active {
+    transform: scale(0.97); 
+    filter: drop-shadow(0 0 4px black); 
+}
