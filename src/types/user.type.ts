@@ -2,6 +2,9 @@ export class User {
   id: string;
   username: string;
   email: string;
-  passwordHash: string;
   avatar?: string;
+}
+
+export class UsersResponse {
+  users: User[];
 }

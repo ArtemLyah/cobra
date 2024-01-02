@@ -1,0 +1,48 @@
+.contactUs{
+  color: #d5d5d5;
+  display: flex;
+  width: 100%;
+}
+.contactUsQuestion{
+  height: 250px;
+  width: 280px;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 50px 0;
+  margin: 0 330px 0 130px;
+}
+.contactUsContact{
+  height: 250px;
+  min-width: 280px;
+  width: auto;
+  background-color: #383837;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 50px 20px;
+  margin: 0 130px 0 130px;
+}
+.contactUsQuestionFAQ{
+  display: grid;
+}
+.containerForButton{
+  border-radius: 27px;
+  background-color: #70C548;
+}
+
+@media (max-width: 1400px){
+  .contactUsQuestion{
+    margin: 0 130px 0 130px;
+  }
+}
+
+@media (max-width: 990px) {
+  .contactUsContact{
+    margin: 0 70px 0 70px;
+  }
+  .contactUsQuestion{
+    margin: 0 70px 0 70px;
+  }
+}

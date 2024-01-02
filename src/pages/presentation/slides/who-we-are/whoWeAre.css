@@ -1,0 +1,34 @@
+.whoWeAreSlide {
+  margin: 0 50px 0;
+  color: #d5d5d5;
+  width: 100%;
+}
+
+.whoWeAreTitle {
+  word-break: break-word;
+  color: #75D04A;
+  margin: 0 130px 0 130px;
+}
+
+.subtitle {
+  word-break: break-word;
+  color: #75D04A;
+  margin: 0 130px 0 130px;
+}
+.whoWeAreSlide p {
+  word-break: break-word;
+  padding-bottom: 40px;
+  margin: 0 130px 0 130px;
+}
+
+@media (max-width: 990px){
+  .whoWeAreTitle { 
+    margin: 0 70px 0 70px;
+  }
+  .subtitle { 
+    margin: 0 70px 0 70px;
+  }
+  .whoWeAreSlide p {
+    margin: 0 70px 0 70px;
+  }
+}
