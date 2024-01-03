@@ -2,13 +2,12 @@ export class User {
   id: string;
   username: string;
   email: string;
-  avatar?: string;
+  avatar: string;
+  created_at: Date;
 }
 
 export class UserAuth {
-  user_id?: string;
-}
-
-export class UserList {
-  users: User[];
+  userId: string;
+  username: string;
+  avatar: string;
 }

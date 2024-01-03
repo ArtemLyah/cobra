@@ -25,10 +25,10 @@ export const useAuth = () => {
     return response;
   };
 
-  const clear = () => {
-    setAuth({});
+  const logout = () => {
+    setAuth(null);
     removeItem('token');
   };
 
-  return { auth, setAuth, isCheckingAuth, login, signup, clear };
+  return { auth, setAuth, isCheckingAuth, login, signup, logout };
 };

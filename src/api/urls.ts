@@ -6,7 +6,11 @@ class URL {
   // users
   USERS = this.API + '/users';
   GET_ALL_USERS = this.USERS;
-  
+  GET_USER = this.USERS+'/me';
+  UPDATE_USER = this.USERS+'/update';
+  UPDATE_PASSWORD_USER = this.USERS+'/updatePassword';
+  DELETE_USER = this.USERS+'/deleteAccount';
+
   // auth
   REGISTER = this.API + '/auth/register';
   LOGIN = this.API + '/auth/login';

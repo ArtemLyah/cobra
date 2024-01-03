@@ -1,0 +1,131 @@
+.user-page__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-light-grey);
+  padding: 60px 0;
+}
+
+.user-page__container .container {
+
+  background-color: var(--color-dark);
+  border-radius: 1.5rem;
+  border: 6px var(--color-green) solid;
+
+  padding: 20px;
+
+  @media screen and (min-width: 991px) {
+    max-width: 860px;
+  }
+}
+
+.user-page-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.user-page__tab-grid {
+  grid-template-columns: 296px 1fr;
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.user-page__tab__general-settings {
+  grid-template-columns: 1fr 160px;
+
+  @media screen and (max-width: 460px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.user-page__tab__general-settings figure {
+  margin: 0;
+}
+
+.user-page__tab__general-settings__image-group {
+  @media screen and (max-width: 460px) {
+      grid-row: 1;
+  }
+}
+
+.user-page__use-preview__grid {
+  grid-template-columns: 48px 1fr;
+
+}
+
+.user-page__container .listGroup-item {
+  background-color: var(--color-dark);
+  border: 1px solid var(--color-dark);
+  color: var(--color-light-grey);
+}
+
+.user-page__container .listGroup-item.active {
+  background-color: var(--color-green);
+  border: 1px solid var(--color-dark);
+  color: var(--color-light-grey);
+}
+
+.user-page__container .bDefault {
+  color: var(--color-light-grey);
+  background-color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+.user-page__container .btn {
+  background: none;
+  border-color: var(--color-light-grey);
+}
+
+.user-page__container .btn.save:hover {
+  background-color: rgb(57, 160, 57);
+}
+
+.user-page__container .btn.cancel:hover {
+  background-color: rgb(172, 24, 54);
+}
+
+.user-page__container .btn:active {
+  transform: scale(0.95);
+  background: none;
+  border-color: var(--color-light-grey);
+}
+
+.user-page__container .btn.deleteAccount {
+  background-color: rgb(172, 24, 54);
+}
+
+.user-page__container .btn.deleteAccount:hover {
+  background-color: rgba(172, 24, 54, 0.616);
+}
+
+.user-page__container .form-control {
+  background-color: #1D1D2A;
+  color: #d5d5d5;
+  font-size: 14px;
+  border-color: #1D1D2A;
+}
+
+.user-page__container .form-control::placeholder {
+  color: #969494;
+}
+
+.user-page__change-avatar__avatar {
+  aspect-ratio: 1/1;
+}
+
+.user-page__change-avatar__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.user-page__confirmation-btn-container > button:first-child {
+  margin-right: 1rem;
+}
+
+.form-group .user-avatar {
+  display: block;
+}

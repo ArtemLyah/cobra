@@ -4,6 +4,7 @@ import { App }  from '../pages/app';
 import AboutPage from '../pages/about.page';
 import HomePage from '../pages/home.page';
 import FAQPage from '../pages/faq.page';
+import UserPage from '../pages/user-profile/user-profile.page';
 import PresentationPage from '../pages/presentation/presentation.page';
 import RegistrationPage from '../pages/registration.page';
 import LogInPage from '../pages/login.page';
@@ -36,6 +37,13 @@ export const router = createBrowserRouter([
       PageBuilder({
         path: '/presentation',
         page: <PresentationPage/>,
+        footer: true,
+      }),
+      PageBuilder({
+        path: '/profile',
+        page: <UserPage/>,
+        requireAuth: true,
+        menu: true,
         footer: true,
       }),
       {

@@ -6,7 +6,7 @@ const RequireAuth = () => {
   const { auth, isCheckingAuth } = useAuth();
   return (
     !isCheckingAuth ? 
-      auth?.user_id
+      auth?.userId
         ? <Outlet/>
         : <Navigate to='/presentation'/>
       : <></>
