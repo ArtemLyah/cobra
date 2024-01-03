@@ -1,25 +1,33 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 import { Navbar, Container, Nav, Button, Image, Stack, Dropdown } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 
-export const MenuComponent = () => {
-  const { user } = useAuth();
+export const Menu = () => {
+  const { auth, clear } = useAuth();
+  const navigate = useNavigate();
+
+  const logout = (event: FormEvent) => {
+    event.preventDefault();
+    clear();
+    navigate('/presentation');
+  };
 
   return (
     <Navbar bg="dark" data-bs-theme="dark" collapseOnSelect expand="lg" className="bg-body-tertiary" style={{ backgroundColor: '#1D1D2A' }}>
       <Container>
-        <Nav.Link href="/">
-          <Image src="https://shorturl.at/bvxLO" className="img-fluid" width="45px" height="45px" rounded />
-        </Nav.Link>
+        <Link to="/">
+          <Image src="https://shorturl.at/AHKS8" className="img-fluid" width="45px" height="45px" rounded />
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto nav nav-underline">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/about">About</Nav.Link>
-            <Nav.Link href="/faq">FAQ</Nav.Link>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/faq">FAQ</Link>
           </Nav>
           <Nav>
-            { user ? 
+            { auth?.user_id ? 
               <Dropdown>
                 <Dropdown.Toggle id="user-profile-dropdown">
                   <Image src="https://shorturl.at/hjES1" className="img-fluid" width="45px" height="45px" rounded />
@@ -28,13 +36,13 @@ export const MenuComponent = () => {
                   <Dropdown.Item eventKey="1">My profile</Dropdown.Item>
                   <Dropdown.Item eventKey="2">Create map</Dropdown.Item>
                   <Dropdown.Item eventKey="3">Maps</Dropdown.Item>
-                  <Dropdown.Item eventKey="4">Log out</Dropdown.Item>
+                  <Dropdown.Item eventKey="4" onClick={(e) => logout(e)}>Log out</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
               : 
               <Stack direction="horizontal" gap={2}>
-                <Button variant="success"> Sign up </Button>
-                <Button variant="success"> Log in </Button>
+                <Button variant="success" onClick={() => navigate('/auth/register')}> Sign up </Button>
+                <Button variant="success" onClick={() => navigate('/auth/login')}> Log in </Button>
               </Stack>
             }
           </Nav>
@@ -44,4 +52,4 @@ export const MenuComponent = () => {
   );
 };
 
-export default MenuComponent;
+export default Menu;

@@ -8,10 +8,9 @@ import WhoWeAreSlide from './slides/who-we-are/whoWeAre.slide';
 import ContactUsSlide from './slides/contact-us/contact_us.slide';
 import BackToTop from '../../components/buttons/scroll-up/back-to-top';
 
-import './presentation.css';
+import '../styles/presentation.css';
 
 const PresentationPage = () => {
-
   return ( 
     <>
       <Container id='Presentation' >

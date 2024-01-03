@@ -1,8 +1,11 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router';
 import './preview.css';
 
 const PreviewSlide = () => {
+  const navigate = useNavigate();
+
   return ( 
     <Container className='previewSlide'>
       <Container>
@@ -15,8 +18,8 @@ const PreviewSlide = () => {
     
         <Row className='auth-btn '>
           <Col >
-            <Button variant='success' className='btn1'>Sign In</Button>
-            <Button variant='light' className='btn2'>Sign Up</Button>
+            <Button variant='success' className='btn1' onClick={() => navigate('/auth/login')}>Log In</Button>
+            <Button variant='light' className='btn2' onClick={() => navigate('/auth/register')}>Sign Up</Button>
           </Col>
         </Row>
       </Container>

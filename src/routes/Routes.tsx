@@ -1,20 +1,55 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import { App }  from '../App';
-import AboutPage from '../pages/AboutPage/AboutPage';
-import HomePage from '../pages/HomePage/HomePage';
-import FAQPage from '../pages/FAQPage/FAQPage';
+import { App }  from '../pages/app';
+import AboutPage from '../pages/about.page';
+import HomePage from '../pages/home.page';
+import FAQPage from '../pages/faq.page';
 import PresentationPage from '../pages/presentation/presentation.page';
+import RegistrationPage from '../pages/registration.page';
+import LogInPage from '../pages/login.page';
+import PageBuilder from './PageBuilder';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
-      { path: 'presentation', element: <PresentationPage /> },
-      { path: 'about', element: <AboutPage /> },
-      { path: 'faq', element: <FAQPage /> },
-      { path: 'home', element: <HomePage /> },
+      PageBuilder({
+        path: '/',
+        page: <HomePage/>,
+        requireAuth: true,
+        menu: true,
+        footer: true,
+      }),
+      PageBuilder({
+        path: '/about',
+        page: <AboutPage/>,
+        menu: true,
+        footer: true,
+      }),
+      PageBuilder({
+        path: '/faq',
+        page: <FAQPage/>,
+        menu: true,
+        footer: true,
+      }),
+      PageBuilder({
+        path: '/presentation',
+        page: <PresentationPage/>,
+      }),
+      {
+        path: 'auth',
+        children: [
+          PageBuilder({
+            path: '/auth/register',
+            page: <RegistrationPage/>,
+          }),
+          PageBuilder({
+            path: '/auth/login',
+            page: <LogInPage/>,
+          }),
+        ],
+      },
     ],
   },
 ]);

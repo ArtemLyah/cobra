@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Lexend'; /*a name to be used later*/
+  src: url('../../../fonts/Lexend-VariableFont_wght.ttf'); /*URL to font*/
+}
+
+body {
+  background-color: #1D1D2A;
+  font-family: 'Lexend', sans-serif;;
+  font-size: 14px;
+  color: #d5d5d5;
+}
