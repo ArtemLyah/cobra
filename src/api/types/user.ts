@@ -5,6 +5,10 @@ export class User {
   avatar?: string;
 }
 
-export class UsersResponse {
+export class UserAuth {
+  user_id?: string;
+}
+
+export class UserList {
   users: User[];
 }
