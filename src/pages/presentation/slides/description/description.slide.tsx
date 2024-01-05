@@ -1,6 +1,8 @@
 import React from 'react';
-import { Container, Col, Image } from 'react-bootstrap';
+import { Container, Col, Image, Row } from 'react-bootstrap';
+
 import './description.css';
+import { Link } from 'react-router-dom';
 
 const DescriptionSlide = () => {
 
@@ -10,18 +12,19 @@ const DescriptionSlide = () => {
                     to share his experience in codding in various programming languages! `;
 
   return ( 
-    <Container className="description-slide">
-      <Col>
-        <Container className="description-text glass">
-          <p><strong>Cobra</strong>{descText}<br/><strong id="try">Try it yourself!</strong></p>
-        </Container>
-      </Col>
-      <Col>
-        <Container className="description">
+    <div className="description-slide">
+      <div className='row glass-border'>
+        <div className="description-text ">
+          <p><strong>CoBra</strong>{descText}<br/></p>
+          <div className='full-width'>
+            <Link className='simple-link' to='/auth/register'>Try it yourself!</Link>
+          </div>
+        </div>
+        <div className="description-image">
           <Image src="https://shorturl.at/fpJR1" id="desc-img"/>
-        </Container>
-      </Col>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };
  

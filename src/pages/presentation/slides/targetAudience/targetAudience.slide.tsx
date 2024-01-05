@@ -4,38 +4,36 @@ import './targetAudience.css';
 
 const TargetAudienceSlide = () => {
   return ( 
-    <Container className='targetAudienceSlide'>
-      <Row className='justify-content-center'>
+    <Container className='targetAudienceSlide glass-border'>
+      <Row className='justify-content-center '>
         <Col>
           <h1>To whom this project is</h1>
         </Col>
       </Row>
       <Row className="img-row">
-        <Col xs="12" sm="6" md="6" lg='6' xl='auto' className="d-flex flex-column align-items-center img-cols">
+        <Col  sm="6" md="6" lg='6' xl='3' className="d-flex flex-column align-items-center img-cols">
           <Image className="img-target-audience"
             src="https://shorturl.at/vwFS2" 
-            rounded
+            
           />
           <h5>For beginners</h5>
         </Col>
-        <Col xs="12" sm="6" md="6" lg='6' xl='auto' className="d-flex flex-column align-items-center img-cols">
+        <Col  sm="6" md="6" lg='6' xl='3' className="d-flex flex-column align-items-center img-cols">
           <Image className="img-target-audience"
             src="https://shorturl.at/vwFS2" 
-            rounded
+          
           />
           <h5>For developers</h5> 
         </Col>
-        <Col xs="12" sm="6" md="6" lg='6' xl='auto' className="d-flex flex-column align-items-center img-cols">
+        <Col  sm="6" md="6" lg='6' xl='3' className="d-flex flex-column align-items-center img-cols">
           <Image className="img-target-audience"
             src="https://shorturl.at/vwFS2" 
-            rounded
           />
           <h5>For juniors</h5>
         </Col>
-        <Col xs="12" sm="6" md="6" lg='6' xl='auto' className="d-flex flex-column align-items-center img-cols">
+        <Col  sm="6" md="6" lg='6' xl='3' className="d-flex flex-column align-items-center img-cols">
           <Image className="img-target-audience"
             src="https://shorturl.at/vwFS2" 
-            rounded
           />
           <h5>For middles</h5>
         </Col>

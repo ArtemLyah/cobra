@@ -4,7 +4,7 @@ import './whoWeAre.css';
 
 const WhoWeAreSlide = () => {
   return (
-    <Container className='whoWeAreSlide'>
+    <Container className='whoWeAreSlide glass-border'>
       <h2 className='whoWeAreTitle'>WHO WE ARE?</h2>
       <p>First of all we need to tell everyone who are we and what do we want</p>
       <h5 className='subtitle'>How we got the idea to create CoBra</h5>
