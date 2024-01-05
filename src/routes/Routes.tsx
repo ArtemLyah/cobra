@@ -36,6 +36,7 @@ export const router = createBrowserRouter([
       PageBuilder({
         path: '/presentation',
         page: <PresentationPage/>,
+        footer: true,
       }),
       {
         path: 'auth',

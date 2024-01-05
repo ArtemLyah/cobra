@@ -2,12 +2,22 @@
   margin: 0 50px 0;
   color: #d5d5d5;
   width: 100%;
+  margin-bottom: 100px;
 }
 
 .whoWeAreTitle {
   word-break: break-word;
   color: #75D04A;
   margin: 0 130px 0 130px;
+}
+.glass-border{
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(5px);
+  width:100%;
+  -webkit-backdrop-filter: blur(5px);
+  border:1px solid #75d04ab5;
+  box-shadow: 0 8px 32px 0 rgba(112, 111, 111, 0.37);
+  padding: 30px 40px;
 }
 
 .subtitle {
