@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { Outlet, RouteObject } from 'react-router';
 import Footer from '../components/footer/footer';
-import Menu from '../components/menu';
+import Menu from '../components/Menu/Menu';
 import RequireAuth from '../components/RequireAuth';
 
 interface PageBuilderProps {
