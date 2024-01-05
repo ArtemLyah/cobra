@@ -4,11 +4,13 @@ import LogInButton from './buttons/LogInButton';
 import ProfileDropdown from './dropdown/ProfileDropdown';
 import Dropdown from './dropdown/Dropdown';
 import { Link, NavLink } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 
 import './styles/Menu.css';
 
 const Menu = () => {
   const [ active, setActive ] = useState(false);
+  const { clear } = useAuth();
 
   const handleClick = () => setActive(!active);
 
@@ -60,7 +62,7 @@ const Menu = () => {
                 <div className='profile-links'>
                   <Link to='/profile'>My Profile</Link>
                   <Link to='/maps'>My Maps</Link>
-                  <Link to='/'>Log Out</Link>
+                  <Link to='/presentation' onClick={clear} >Log Out</Link>
                 </div>
               </ProfileDropdown>
             </div>

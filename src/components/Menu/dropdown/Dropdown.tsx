@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, ReactNode, useRef } from 'react';
-import useOutSideClick from '../useOutSideClickHook/useOutSideClick';
+import React, { useState, ReactNode, useRef, useEffect } from 'react';
 
 interface DropdownProps {
   title: string;
@@ -8,17 +7,27 @@ interface DropdownProps {
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ title, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const ref = useRef<any>(null);
-  useOutSideClick(ref, setIsOpen);
+  const [ isOpen, setIsOpen ] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+  const dropdownListRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const useOutSideClick = (e: MouseEvent) => {
+      if (!dropdownListRef.current || !dropdownListRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', useOutSideClick);
+
+    return () => {
+      document.removeEventListener('mousedown', useOutSideClick);
+    };
+  }, []);
 
   return (
-    <div className="dropdown">
-      <span ref={ref} onClick={toggleDropdown}>
+    <div className="dropdown" ref={dropdownListRef} onClick={() => setIsOpen(!isOpen)}>
+      <span >
         {title}&nbsp;
         <i className="fa-solid fa-caret-down" />
       </span>
