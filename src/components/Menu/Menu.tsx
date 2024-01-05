@@ -10,6 +10,7 @@ import './styles/Menu.css';
 
 const Menu = () => {
   const [ active, setActive ] = useState(false);
+  const { logout } = useAuth();
 
   const { auth } = useAuth();
 
@@ -62,11 +63,11 @@ const Menu = () => {
           </div>
           { user ? 
             <div id='profile-dropdown'>
-              <ProfileDropdown title={ auth?.userId ? auth?.avatar : 'https://shorturl.at/acJKX' }>
+              <ProfileDropdown title={ auth?.userId ? auth?.avatar : 'https://api-private.atlassian.com/users/5595f3a5f502a4e89b7e9535cfb43b52/avatar' }>
                 <div className='profile-links'>
                   <Link to='/profile'>My Profile</Link>
                   <Link to='/maps'>My Maps</Link>
-                  <Link to='/'>Log Out</Link>
+                  <Link to='/presentation' onClick={logout} >Log Out</Link>
                 </div>
               </ProfileDropdown>
             </div>
