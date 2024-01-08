@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const LogInButton = () => {
+const ReadMoreButton = () => {
   const [ isHovered, setIsHovered ] = useState(false);
   const [ isActive, setIsActive ] = useState(false);
 
@@ -21,32 +21,30 @@ const LogInButton = () => {
     setIsHovered(false);
   };
 
+  
   const styles = {
-    outline: 'none',
-    border: 'none',
-    width: '100px',
+    backgroundColor: '#FFFFFF',
+    borderRadius: '10px',
+    padding: '0 15px',
+    color: '#5CAB7D',
+    fontSize: '15px',
     height: '40px',
-    backgroundColor: '#5CAB7D',
-    fontSize: '16px',
-    color: 'white',
-    fontWeight: '600',
-    borderRadius: '5px',
-    transform: `scale(${isActive ? '0.95' : isHovered ? '1.02' : '1'})`,
+    width: '130px',
   };
 
   return (
-    
-    <Link to='/auth/login'>
+    <Link to='/'>
       <button className='btn'
         style={styles}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}>
-            Log In
+            Read more
       </button>
     </Link>
   );
+
 };
 
-export default LogInButton;
+export default ReadMoreButton;

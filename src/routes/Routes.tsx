@@ -2,7 +2,7 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { App }  from '../pages/app';
 import AboutPage from '../pages/about.page';
-import HomePage from '../pages/home.page';
+import HomePage from '../pages/homePage/home.page';
 import FAQPage from '../pages/faq.page';
 import UserPage from '../pages/user-profile/user-profile.page';
 import PresentationPage from '../pages/presentation/presentation.page';
@@ -18,7 +18,7 @@ export const router = createBrowserRouter([
       PageBuilder({
         path: '/',
         page: <HomePage/>,
-        requireAuth: true,
+        //requireAuth: true,
         menu: true,
         footer: true,
       }),
