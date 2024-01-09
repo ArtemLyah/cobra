@@ -4,11 +4,14 @@ import LogInButton from './buttons/LogInButton';
 import ProfileDropdown from './dropdown/ProfileDropdown';
 import Dropdown from './dropdown/Dropdown';
 import { Link, NavLink } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 
 import './styles/Menu.css';
 
 const Menu = () => {
   const [ active, setActive ] = useState(false);
+
+  const { auth } = useAuth();
 
   const handleClick = () => setActive(!active);
 
@@ -34,6 +37,9 @@ const Menu = () => {
               <NavLink to='/'>Home</NavLink>
             </li>
             <li className='nav-item'>
+              <NavLink to='/profile'>Profile</NavLink>
+            </li>
+            <li className='nav-item'>
               <NavLink to='/about' >About</NavLink>
             </li>
             { user ?
@@ -56,7 +62,7 @@ const Menu = () => {
           </div>
           { user ? 
             <div id='profile-dropdown'>
-              <ProfileDropdown title={'https://shorturl.at/acJKX'}>
+              <ProfileDropdown title={ auth?.userId ? auth?.avatar : 'https://shorturl.at/acJKX' }>
                 <div className='profile-links'>
                   <Link to='/profile'>My Profile</Link>
                   <Link to='/maps'>My Maps</Link>

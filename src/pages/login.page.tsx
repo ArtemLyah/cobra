@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { InputGroup } from 'react-bootstrap';
 import './styles/form.css';
 import { AxiosError } from 'axios';
-import { ServerException } from '../api/types/exception';
+import { ServerException } from '../api/exceptions/ServerException';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
@@ -109,7 +109,7 @@ export const LogInPage = () => {
         </InputGroup>
 
         <InputGroup className='form-item-block remember-me'>
-          <label><input type='checkbox' onClick={() => setRememberMe(!rememberMe)} checked/> Remember me</label>
+          <label><input type='checkbox' onClick={() => setRememberMe(!rememberMe)} checked={rememberMe}/> Remember me</label>
         </InputGroup>
 
         <InputGroup className='form-item-block alrady-have'>

@@ -4,9 +4,8 @@ import { ZodType, z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import './styles/form.css';
-import { authService } from '../api/services/auth.service';
 import { AxiosError } from 'axios';
-import { ServerException } from '../api/types/exception';
+import { ServerException } from '../api/exceptions/ServerException';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
@@ -148,7 +147,7 @@ const RegistrationPage = () => {
         </InputGroup>
 
         <InputGroup className='form-item-block remember-me'>
-          <label><input type='checkbox' onClick={() => setRememberMe(!rememberMe)} checked/> Remember me</label>
+          <label><input type='checkbox' onClick={() => setRememberMe(!rememberMe)} checked={rememberMe}/> Remember me</label>
         </InputGroup>
 
         <InputGroup className='form-item-block already-have'>

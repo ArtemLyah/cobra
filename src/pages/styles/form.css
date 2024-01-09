@@ -17,11 +17,11 @@
   padding: 15px 25px;
 }
 
-.header {
+.form-page .header {
   text-align: center;
 }
 
-.form-item-block {
+.form-block .form-item-block {
   margin: 15px 8px 0px 8px;
   display: flex;
   align-items: center; 
@@ -91,7 +91,7 @@
   font-size: 14px;
 }
 
-.repeat-password {
+.input-block .repeat-password {
   margin-top: 10px;
 }
 

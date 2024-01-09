@@ -5,24 +5,23 @@ import { UserAuth } from '../api/types/user';
 import useCookie from '../hooks/useCookie';
 
 interface IAuthContext {
-  auth: UserAuth;
+  auth: UserAuth | null;
+  setAuth: (value: UserAuth | null) => void; 
   isCheckingAuth: boolean,
-  setAuth: (value: UserAuth) => void; 
 }
 
 export const AuthContext = createContext<IAuthContext>({
-  auth: {},
+  auth: null,
   isCheckingAuth: true,
-  setAuth: (value: UserAuth) => {},
+  setAuth: () => {},
 });
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
   const [ isCheckingAuth, setIsCheckingAuth ] = useState(true);
-  const [ auth, setAuth ] = useState({});
-  const { getItem } = useCookie();
+  const [ auth, setAuth ] = useState<UserAuth | null>(null);
+  const { token } = useCookie();
 
   useEffect(() => {
-    const token = getItem('token');
     if (!token) {
       setIsCheckingAuth(false);
       return;
