@@ -9,6 +9,7 @@ import PresentationPage from '../pages/presentation/presentation.page';
 import RegistrationPage from '../pages/registration.page';
 import LogInPage from '../pages/login.page';
 import PageBuilder from './PageBuilder';
+import RoadmapPage from '../pages/roadmap/roadmap.page';
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +44,12 @@ export const router = createBrowserRouter([
         path: '/profile',
         page: <UserPage/>,
         requireAuth: true,
+        menu: true,
+        footer: true,
+      }),
+      PageBuilder({
+        path: '/roadmap',
+        page: <RoadmapPage/>,
         menu: true,
         footer: true,
       }),

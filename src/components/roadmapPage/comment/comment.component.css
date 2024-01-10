@@ -1,0 +1,49 @@
+.comment{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    height: 100%;
+    background-color: #D9D9D9;
+    padding: 9px 12px;
+    margin: 0 0 2vh 0;
+}
+.comment__user{
+    margin-right: 40px;
+    width: 86px;
+    height: 86px;
+}     
+
+.user-image {
+    width: 86px;
+    height: 86px;
+    background-size: 100% 100%;
+    object-fit: cover;
+}
+
+.comment__content{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.comment__content__testimonial{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.comment__content__testimonial__text{
+    display: flex;
+    flex-direction: row;
+}
+.comment__content__testimonial__text__userName{
+    display: flex;
+    align-items: center;
+    margin: 0 1vw 0 0;
+}
+.comment__content__testimonial__text__date{
+    display: flex;
+    align-items: center;
+}
+
+
+
