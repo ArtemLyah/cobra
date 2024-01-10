@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import  { createContext, PropsWithChildren, useState } from 'react';
 import { authService } from '../api/services/auth.service';
-import { UserAuth } from '../api/types/user';
+import { UserPayload } from '../api/types/user.type';
 import useCookie from '../hooks/useCookie';
 
 interface IAuthContext {
-  auth: UserAuth | null;
-  setAuth: (value: UserAuth | null) => void; 
+  auth: UserPayload | null;
+  setAuth: (value: UserPayload | null) => void; 
   isCheckingAuth: boolean,
 }
 
@@ -18,7 +18,7 @@ export const AuthContext = createContext<IAuthContext>({
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
   const [ isCheckingAuth, setIsCheckingAuth ] = useState(true);
-  const [ auth, setAuth ] = useState<UserAuth | null>(null);
+  const [ auth, setAuth ] = useState<UserPayload | null>(null);
   const { token } = useCookie();
 
   useEffect(() => {

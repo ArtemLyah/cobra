@@ -35,7 +35,7 @@
     width: 100%;
 }
 .description__image{
-    background-image: url('./images/imageRoadmap.png');
+    background-image: url('./images/imageRoadmap.jpg');
     height: 121.9vh;
     width: 100%;
     background-size: 100% 100%;
@@ -57,7 +57,7 @@
 
 .description__coment__boxForComment {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     flex-direction: row;
     border: 1px solid #D5D5D5;
     background: #1D1D2A;

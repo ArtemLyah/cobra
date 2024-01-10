@@ -65,7 +65,7 @@ const RegistrationPage = () => {
   return (
     <Container className='form-page'>
       <Form autoComplete='off' className='form-block' onSubmit={handleSubmit(submitData)}>
-        <header className='header'>
+        <header className='form-header'>
           <h3>Sign up</h3>
         </header>
 

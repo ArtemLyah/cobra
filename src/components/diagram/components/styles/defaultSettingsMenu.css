@@ -1,0 +1,40 @@
+.default-settings {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.default-settings-item {
+  padding-bottom: 5px;
+}
+
+.default-settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+
+.default-settings-item p {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.default-settings-block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.default-settings-block .node-number{
+  margin-top: 10px;
+}
+
+.default-settings-block label {
+  display: block;
+  text-align: center;
+}
+
+.default-settings-block input {
+  width: 90%;
+}

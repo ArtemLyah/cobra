@@ -1,0 +1,10 @@
+.react-flow__node-textNode {
+  min-width: 100px;
+  min-height: 30px;
+  font-size: 14px;
+  color: #d5d5d5;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,75 @@
+.data-settings {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
+  width: 400px;
+}
+
+.input-data-side > .title-block {
+  margin: 10px 0 15px 0;
+}
+
+.input-data-side > .title-block input {
+  width: 100%;
+  outline: none;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #1D1D2A;
+  font-size: 14px;
+  color: #D5D5D5;
+  border: 1px solid #D5D5D5;
+}
+
+.input-data-side .content-block {
+  width: 100%;
+  outline: none;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  box-sizing: border-box;
+  background-color: #1D1D2A;
+  font-size: 14px;
+  color: #D5D5D5;
+  border: 1px solid #D5D5D5;
+}
+
+.input-data-side .content-block::-webkit-scrollbar {
+  background-color: #1D1D2A;
+  width: 3px;
+}
+.input-data-side .content-block::-webkit-scrollbar-thumb {
+  background-color: #d5d5d5;
+}
+
+.data-menu-btn {
+  width: 100%;
+}
+
+.data-menu-btn.preview-btn {
+  color: #D5D5D5;
+}
+
+.result-data-side {
+  margin-top: 10px;
+  scroll-behavior: smooth;
+}
+
+.result-data-side .topic-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.result-data-side .footnotes a, .result-data-side [id*="user-content-fnref-"] {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: #75D04A;
+}
+
+.result-data-side img {
+  max-width: 100%;
+};

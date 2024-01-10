@@ -1,0 +1,12 @@
+.react-flow__node-groupNode {
+  min-width: 200px;
+  min-height: 200px;
+  font-size: 12px;
+  background: rgba(98, 255, 234, 0.087);
+  border: 1px solid #72f6e4;
+  border-radius: 5px;
+  z-index: -100;
+  display: flex;
+  justify-content: center;
+  color: #d5d5d5;
+}
