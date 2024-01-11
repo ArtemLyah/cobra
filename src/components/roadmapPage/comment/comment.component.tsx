@@ -21,14 +21,6 @@ const Comment = (props: Props) => {
     comment='Some good review. Some good review. Some good review. Some good review. Some good review. Some good review. Some good review. Some good review. Some good review. Some good review. ',
   } = props;
 
-  const starsRating = {
-    size: 24,
-    isHalf: true,
-    emptyIcon: <i className="far fa-star"></i>,
-    halfIcon: <i className="fa fa-star-half-alt"></i>,
-    fullIcon: <i className="fa fa-star"></i>,
-    activeColor: '#ffd700',
-  };
   return (
     <div className='comment'>
       <div className='comment__user'>

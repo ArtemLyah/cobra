@@ -3,15 +3,6 @@ import { Link } from 'react-router-dom';
 
 const CreateMapButton = () => {
   const [ isHovered, setIsHovered ] = useState(false);
-  const [ isActive, setIsActive ] = useState(false);
-
-  const handleMouseDown = () => {
-    setIsActive(true);
-  };
-
-  const handleMouseUp = () => {
-    setIsActive(false);
-  };
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -41,8 +32,6 @@ const CreateMapButton = () => {
     <Link to='/'>
       <button className='btn'
         style={styles}
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}>
             Create map

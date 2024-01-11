@@ -52,15 +52,6 @@ const Sidebar = (props: Props) => {
             </div>
             <ProgressBar now={progress} />
           </div>
-
-          <div className="sidebar-item related-maps">
-            <span>Related maps</span>
-            <div className='related-maps-list'>
-              <div className="related-maps-list-item"></div>
-              <div className="related-maps-list-item"></div>
-              <div className="related-maps-list-item"></div>
-            </div>
-          </div>
         </Col>
       </Row>
     </Container>

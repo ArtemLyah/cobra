@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Multiselect from 'multiselect-react-dropdown';
 
@@ -8,8 +8,6 @@ import './styles/searchbarComponent.css';
 const SearchbarComponent = () => {
   const ratingOptions = [ { value: '5⭐' }, { value: '4⭐' }, { value: '3⭐' }, { value: '2⭐' }, { value: '1⭐' } ];
   const difficultyOptions = [ { value: 'Beginner' }, { value: 'Junior' }, { value: 'Middle' }, { value: 'Senior' } ];
-  const topicOptions = [ { value: 'Program language' }, { value: 'Technology' }, { value: 'Framework' }, { value: 'Profession' } ];
-  const tagOptions = [ { value: 'One' }, { value: 'Two' }, { value: 'Three' } ];
   
   return (
     <Container className="search-component-container">
@@ -17,15 +15,17 @@ const SearchbarComponent = () => {
         <div className='select-container'>
           <div className='select-box'>
             <Multiselect
-              placeholder='Rating ▼'
+              placeholder='Rating'
               displayValue="value"
-              hideSelectedList
+              // hideSelectedList
               onKeyPressFn={function noRefCheck () {}}
               onRemove={function noRefCheck () {}}
               onSearch={function noRefCheck () {}}
               onSelect={(e) => console.log(e) } // <=== У консолі виводиться масив обраних значень
               options={ratingOptions}
-              showCheckbox
+              // showCheckbox
+              singleSelect={true}
+              customArrow={ '▼' }
             />
           </div>
         </div>
@@ -41,22 +41,7 @@ const SearchbarComponent = () => {
               onSearch={function noRefCheck () {}}
               onSelect={(e) => console.log(e) } // У консолі виводиться масив обраних значень
               options={difficultyOptions}
-              showCheckbox
-            />
-          </div>
-        </div>
-
-        <div className='select-container'>
-          <div className='select-box'>
-            <Multiselect
-              placeholder='Topic ▼'
-              displayValue="value"
-              hideSelectedList
-              onKeyPressFn={function noRefCheck () {}}
-              onRemove={function noRefCheck () {}}
-              onSearch={function noRefCheck () {}}
-              onSelect={(e) => console.log(e) } // У консолі виводиться масив обраних значень
-              options={topicOptions}
+              // singleSelect={true}
               showCheckbox
             />
           </div>

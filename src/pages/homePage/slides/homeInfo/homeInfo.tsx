@@ -2,17 +2,12 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import CreateMapButton from '../../../../components/homePageComponents/buttons/CreateMapButton';
 import RoadmapCard from '../../../../components/roadmapCard/roadmapCard';
-import RoadmapCardMini from '../../../../components/homePageComponents/roadmapCardMini/roadmapCardMini';
 import { signedMapsData } from './signedMapsData';
 import Carousel from '../../../../components/homePageComponents/slider/Slider';
 
 import './homeInfo.css';
 
 const homeInfo = () => {
-  const handleHeartClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    // Prevent the click event from propagating to the outer card
-    event.stopPropagation();
-  };
 
   return (
     <Container className="homeInfo">

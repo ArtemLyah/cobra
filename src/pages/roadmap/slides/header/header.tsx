@@ -1,11 +1,10 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import './header.css';
 
 type Props = {
-    backgroundImage: string,
     name: string,
     rating: number,
     autor: string,
@@ -15,7 +14,6 @@ type Props = {
 
 const Header = (props: Props) => {
   const { 
-    backgroundImage, 
     name='Python Developer', 
     rating=4.7, 
     autor='John Doe', 
@@ -23,7 +21,7 @@ const Header = (props: Props) => {
     reviews=100,
   } = props;
   return (
-    <Container className='header' style={{ backgroundImage: backgroundImage }}>
+    <Container className='roadmapHeader'>
       <Row className='header__info'>
         <Col>
           <Row>
@@ -35,9 +33,6 @@ const Header = (props: Props) => {
                   <span className='author'> by {autor}</span>
                   <span className='date'>{date}</span>
                 </div>
-                <Link to='/roadmap/roadmapId/map' id='btn-col'>
-                  <button className='go-to-map__btn'>Go To Map</button>
-                </Link>
               </div>
             </Col>
             <Col sm={5} className='rate'>

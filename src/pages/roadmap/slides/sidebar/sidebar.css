@@ -1,6 +1,5 @@
 .sidebar.container {
     height: 100%;
-    /*background-color: #383837;*/
     margin: 0;
     color: #ffff;
 }
@@ -26,6 +25,7 @@
 
 .tag-item {
     display: flex;
+    font-size: 0.91vw;
     width: fit-content;
     height: fit-content;
     padding: 0px 1vw;
@@ -55,36 +55,39 @@
     background: #75D04A;
 }
 /*--------------------------------*/
-.sub-fav {
+.sidebar .sub-fav {
     display: flex;
     flex-direction: column;
     text-align: center;
+    width: 100%;
+    height: max-content;
 }
 
-.sub-fav-btns {
+.sidebar .sub-fav-btns {
     display: flex;
     margin: 0 0.5vw;
-    justify-content: space-between;
+    justify-content: center;
+    width: 100%;
 }
 
-.subscribe-btn.inactive {
+.sidebar .subscribe-btn.inactive {
     font-size: 1.52vw;
     font-weight: 600;
-    margin: 0;
+    margin: 0 1vw 0 0;
     background-color: #75D04A;
     color: #FFFFFF;
-    width: 70%;
+    width: 11.19vw;
     height: 100%;
     transition: background-color 400ms ease;
 }
 
-.subscribe-btn.active {
+.sidebar .subscribe-btn.active {
     font-size: 1.52vw;
     font-weight: 600;
-    margin: 0;
+    margin: 0 1vw 0 0;
     background-color: #1D1D2A;
     color: #FFFFFF;
-    width: 70%;
+    width: 11.19vw;
     height: 100%;
     transition: background-color 400ms ease;
 }
@@ -94,7 +97,7 @@
     background-color: #1D1D2A;
     text-align: center;
     height: 100%;
-    width: 25%;
+    width: 4vw;
     font-size: 2dvw;
     color: #FFFFFF;
     text-align: center;
@@ -111,8 +114,8 @@
     transition: color 400ms ease-in-out;
 }
 
-.sub-fav span {
-    margin-top: 1vh;
+.sidebar .sub-fav span {
+    margin: 1vh 0;
     font-size: 1vw;
 }
 /*--------------------------------*/
@@ -137,25 +140,5 @@
 
 .progressbar .progress .progress-bar {
     background: #7AE5D7;
-}
-/*--------------------------------*/
-.related-maps span {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.related-maps span {
-    font-size: 2vw;
-    margin: 0 1vw 1vh 1vw;
-}
-
-.related-maps-list-item {
-    background: url('https://placehold.co/600x400?text=Related+Map');
-    margin: 0 0 2vh 0;
-    height: 12.6vw;
-    width: 100%;
-    background-size: 100% 100%;
-    object-fit: cover;
 }
 /*--------------------------------*/
