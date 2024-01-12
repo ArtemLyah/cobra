@@ -1,0 +1,161 @@
+.sidebar.container {
+    height: 100%;
+    /*background-color: #383837;*/
+    margin: 0;
+    color: #ffff;
+}
+
+.sidebar.container .col-xxl-3 {
+    padding: 0;
+}
+
+.sidebar-item {
+    margin-bottom: 1.5rem;
+}
+
+/*--------------------------------*/
+.tags #tag__title {
+    font-size: 2.5vw;
+    margin-left: 1rem;
+}
+
+.tag-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag-item {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 0px 1vw;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 50px;
+    border: 3px solid #4ADBC8;
+    background: #5CAB7D;
+    margin: 0.5vh 0.5vw;
+}
+
+.seemore-hide-btns {
+    display: flex;
+    justify-content: center;
+}
+
+.hide-btn, .seemore-btn {
+    display: flex;
+    font-size: 1vw;
+    font-weight: 600;
+    padding: 0.5vw;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #75D04A;
+}
+/*--------------------------------*/
+.sub-fav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.sub-fav-btns {
+    display: flex;
+    margin: 0 0.5vw;
+    justify-content: space-between;
+}
+
+.subscribe-btn.inactive {
+    font-size: 1.52vw;
+    font-weight: 600;
+    margin: 0;
+    background-color: #75D04A;
+    color: #FFFFFF;
+    width: 70%;
+    height: 100%;
+    transition: background-color 400ms ease;
+}
+
+.subscribe-btn.active {
+    font-size: 1.52vw;
+    font-weight: 600;
+    margin: 0;
+    background-color: #1D1D2A;
+    color: #FFFFFF;
+    width: 70%;
+    height: 100%;
+    transition: background-color 400ms ease;
+}
+
+.fav-btn {
+    margin: 0;
+    background-color: #1D1D2A;
+    text-align: center;
+    height: 100%;
+    width: 25%;
+    font-size: 2dvw;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 0;
+}
+
+.fa-regular.fa-heart {
+    color: #FFFFFF;
+    transition: color 400ms ease-in-out;
+}
+
+.fa-solid.fa-heart {
+    color: #FF6969;
+    transition: color 400ms ease-in-out;
+}
+
+.sub-fav span {
+    margin-top: 1vh;
+    font-size: 1vw;
+}
+/*--------------------------------*/
+.progressbar {
+    height: max-content;
+    padding: 0 0 1vh 0;
+    font-size: 1.5vw;
+}
+
+.progress__info {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1vw;
+}
+
+.progressbar .progress {
+    margin:  1vh 1vw 0 1vw;
+    background: #1D1D2A;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.progressbar .progress .progress-bar {
+    background: #7AE5D7;
+}
+/*--------------------------------*/
+.related-maps span {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.related-maps span {
+    font-size: 2vw;
+    margin: 0 1vw 1vh 1vw;
+}
+
+.related-maps-list-item {
+    background: url('https://placehold.co/600x400?text=Related+Map');
+    margin: 0 0 2vh 0;
+    height: 12.6vw;
+    width: 100%;
+    background-size: 100% 100%;
+    object-fit: cover;
+}
+/*--------------------------------*/

@@ -1,0 +1,96 @@
+.description {
+    /* width: 1285px; */
+    height: max-content;
+    /*background-image: url('https://via.placeholder.com/1285x806');*/
+    margin: 0;
+    padding: 4vh 4.23vw;
+}
+.description__content{
+    color: #FFF;
+    font-size: 2.4vw;
+    font-style: normal;
+    font-weight: 400;
+}
+.description__long__text{
+    color: #FFF;
+    font-size: 2.34vw;
+    font-style: normal;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 0;
+    display: inline-block;
+    transition: height 0.3s ease;
+}
+.description__long__text.expanded {
+    height: auto; /* Allow the text to expand */
+}
+.description__button{
+    color: #7AE5D7;
+    font-size: 2.93vw;
+    font-style: normal;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.description__image{
+    background-image: url('./images/imageRoadmap.png');
+    height: 121.9vh;
+    width: 100%;
+    background-size: 100% 100%;
+    object-fit: cover;
+}
+
+.description__coment{
+    margin-top: 5.5vh;
+}
+
+.description__coment__text{
+    color: #FFF;
+    text-align: center;
+    font-size: 2.1vw;
+    font-style: normal;
+    font-weight: 700;  
+    display: flex;
+}
+
+.description__coment__boxForComment {
+    display: flex;
+    align-items: start;
+    flex-direction: row;
+    border: 1px solid #D5D5D5;
+    background: #1D1D2A;
+    padding: 8px;
+    margin: 0 0 3vh 0;
+  }
+  
+  .description__coment__boxForComment__input {
+    flex: 1;
+    background: transparent;
+    border-color: transparent;
+    font-size: 3.2vh;
+    padding-top: 8px;
+    color: #FFF;
+    height: 12vh;
+    text-align: flex-start;
+    margin-right: 8px; /* Adjust the margin as needed */
+    outline: none;
+  }
+  .description__coment__boxForComment__buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .description__coment__boxForComment__input::placeholder {
+    color: #7AE5D7; /* Change the color of the placeholder */
+  }
+  
+  .description__coment__boxForComment__button {
+    background: #7AE5D7;
+    border: none;
+    color: #1D1D2A;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
