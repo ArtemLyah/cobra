@@ -1,0 +1,129 @@
+.homeInfo{
+    background-image: url('../../../../components/homePageComponents/homeImages/Vector.png');
+    margin: 0 0 0 0;
+    min-width: 100%;
+    padding: 100px 0 0 0;
+    border-top:  2px #4ADBC8 solid;
+}
+.homeInfo__headline{
+    color: #D5D5D5;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.homeInfo__headline_turquoiseHeadline{
+    color: #4ADBC8;
+    margin: 0 10px;
+}
+
+.homeInfo__forCreateMapButton{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 120px 0;
+    padding: 0 0 0 0;
+}
+
+.homeInfo__info{
+    background-color: #D5D5D5;
+    border-top: 4px #4ADBC8 solid;
+    border-right: 4px #4ADBC8 solid;
+    border-left: 4px #4ADBC8 solid;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    max-width: 1620px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 100px;
+    padding: 20px 0;
+}
+
+.homeInfo__info_context{
+    min-height: 300px;
+    padding: 20px 60px;
+}
+.homeInfo__info_context_text{
+    color: #1D1D2A;
+    font-size: 45px;
+    font-weight: 600;
+}
+.homeInfo__info_context_maps{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.homeInfo__info_context_miniMaps{
+    /*display: flex;*/
+    display: inline;
+    /*justify-content: space-between;
+    align-items: center;*/
+}
+.homeInfo__info_context_maps_angle{
+    position: relative;
+    color: #1D1D2A;
+    font-size: 50px;
+    font-weight: 600;
+    width: 32px;
+    margin-right: 2rem;
+}
+
+.fa-angle-left {
+    position: absolute;
+    top: 1.5rem;
+    left: -1rem;
+    cursor: pointer;
+}
+
+.fa-angle-right {
+    position: absolute;
+    top: 1.5rem;
+    cursor: pointer;
+}
+/*
+.homeInfo__info_context_maps_angle_btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 50px;
+    color: #1D1D2A;
+    font-weight: 600;
+  }*/
+  
+
+@media (max-width: 1360px){
+    .homeInfo__info_context_maps{
+        flex-wrap: wrap;
+    }
+    .homeInfo__info_context_maps > * {
+        flex-basis: calc(50% - 20px); /* Adjust the flex-basis to keep the card size the same */
+        box-sizing: border-box; /* Include padding and border in the width calculation */
+        margin-bottom: 20px;
+    }
+
+    .fa-angle-left {
+        left: -2rem;
+    }
+}
+
+/*@media (max-width: 1150px){
+    .homeInfo__info_context_miniMaps > :nth-child(3) {
+        display: none;
+    }
+}
+@media (max-width: 900px) {
+    .homeInfo__info_context_miniMaps > :nth-child(2) {
+      display: none;
+    }
+  }*/
+
+
+@media (max-width: 840px){
+    .homeInfo__info_context_maps{
+        display: flex;
+        justify-content: center;
+    }
+}

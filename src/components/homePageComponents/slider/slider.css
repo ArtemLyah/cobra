@@ -1,0 +1,10 @@
+.slick-slider {
+    display: flex;
+}
+
+@media (max-width: 820) {
+    /* .slick-list {
+        margin-left: 6rem;
+        width: 325px;
+    } */
+}

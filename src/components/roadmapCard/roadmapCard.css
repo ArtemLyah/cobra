@@ -1,0 +1,125 @@
+.roadmapCard{
+    background-color: #1D1D2A;
+    width: 290px;
+    height: 180px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+}
+/*https://via.placeholder.com/290x190*/
+.roadmapCard__name{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+.roadmapCard__moreInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+.roadmapCard__moreInfo_rating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.roadmapCard__moreInfo_rating_union{
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    color: #FFF170;
+    font-size: 29px;
+    filter: drop-shadow(0 12px 10px rgba(0,0,0,.5));
+}
+.roadmapCard__moreInfo_rating_number{
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    color: #FFF170;
+    font-size: 24px;
+    font-weight: 700;
+    filter: drop-shadow(0 12px 10px rgba(0,0,0,.5));
+}
+@media (max-width: 1528px){
+    .roadmapCard{
+        width: 270px;
+        height: 170px;
+    }
+    .roadmapCard__name{
+        font-size: 25px;
+    }
+    .roadmapCard__moreInfo_rating_union{
+        width: 25px;
+        height: 25px;
+        font-size: 25px;
+    }
+    .roadmapCard__moreInfo_rating_number{
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1440px){
+    .roadmapCard{
+        width: 250px;
+        height: 150px;
+    }
+    .roadmapCard__name{
+        font-size: 20px;
+    }
+    .roadmapCard__moreInfo_rating_union{
+        width: 25px;
+        height: 25px;
+        font-size: 24px;
+    }
+    .roadmapCard__moreInfo_rating_number{
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1360px){
+    .roadmapCard{
+        width: 290px;
+        height: 190px;
+    }
+    .roadmapCard__name{
+        font-size: 25px;
+    }
+    .roadmapCard__moreInfo_rating_union{
+        width: 30px;
+        height: 30px;
+        font-size: 30px;
+    }
+    .roadmapCard__moreInfo_rating_number{
+        width: 30px;
+        height: 30px;
+        font-size: 24px;
+    }
+}
+@media (max-width: 816px) {
+    .roadmapCard{
+        width: 250px;
+        height: 150px;
+    }
+    .roadmapCard__name{
+        font-size: 20px;
+    }
+    .roadmapCard__moreInfo_rating_union{
+        width: 25px;
+        height: 25px;
+        font-size: 24px;
+    }
+    .roadmapCard__moreInfo_rating_number{
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+    }    
+}

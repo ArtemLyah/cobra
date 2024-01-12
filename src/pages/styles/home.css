@@ -1,0 +1,8 @@
+
+.homePage {
+    background-color: #D5D5D5 !important;
+    /* top | right | bottom | left */
+    margin: 0 0 0 0;
+    min-width: 100%;
+    padding: 0;
+}

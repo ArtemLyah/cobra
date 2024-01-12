@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const LogInButton = () => {
+const CreateMapButton = () => {
   const [ isHovered, setIsHovered ] = useState(false);
   const [ isActive, setIsActive ] = useState(false);
 
@@ -21,32 +21,35 @@ const LogInButton = () => {
     setIsHovered(false);
   };
 
+  const backgroundColor = isHovered
+    ? 'rgba(74, 219, 200, 0.5)'
+    : 'transparent';
+  
   const styles = {
-    outline: 'none',
-    border: 'none',
-    width: '100px',
-    height: '40px',
-    backgroundColor: '#5CAB7D',
-    fontSize: '16px',
-    color: 'white',
-    fontWeight: '600',
-    borderRadius: '5px',
-    transform: `scale(${isActive ? '0.95' : isHovered ? '1.02' : '1'})`,
+    backgroundColor,
+    borderRadius: '0',
+    border: '4px solid #4ADBC8',
+    padding: '0 38px',
+    color: '#D5D5D5',
+    fontSize: '45px',
+    height: '90px',
+    width: '360px',
+    transition: 'background-color 0.3s ease-in-out',
   };
 
   return (
-    
-    <Link to='/auth/login'>
+    <Link to='/'>
       <button className='btn'
         style={styles}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}>
-            Log In
+            Create map
       </button>
     </Link>
   );
+
 };
 
-export default LogInButton;
+export default CreateMapButton;
