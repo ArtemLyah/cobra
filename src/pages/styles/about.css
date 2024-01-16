@@ -1,0 +1,85 @@
+.aboutPage {
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutPage .hero-area {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.aboutPage .hero-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+
+    /* background-image: url('https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
+    /* background-size: cover;
+    background-position: center; */
+
+    background-color: aqua;
+
+    /* filter: brightness(0.4); */
+}
+
+.aboutPage .hero-area .title-container {
+    font-size: 7vh;
+    color: black;
+}
+
+.aboutPage .hero-area .title-container > * {
+    
+}
+
+.aboutPage .hero-area h1 {
+    font-size: 2em;
+    /* color:  #75D04A; */
+}
+.aboutPage .hero-area h2 {
+    font-size: 1em;
+    /* color: #4ADBC8; */
+}
+
+.aboutPage-slides {
+    /* padding-top: 75px; */
+}
+
+.aboutPage-content {
+    background-color: #1D1D2A;
+}
+
+.aboutPage .whoWeAreSlide,
+.aboutPage .developers-slide {
+    margin: 0;
+    margin-bottom: 15px;
+
+    border: none;
+    box-shadow: none;
+
+    background: none;
+} 
+
+.aboutPage .developers-slide h1 {
+    color: #75D04A;
+}
+
+.aboutPage .whoWeAreSlide {
+
+    border-bottom: 2px solid #383837;
+}
+
+.aboutPage .whoWeAreSlide h2 {
+    margin-bottom: 16px;
+}
