@@ -1,0 +1,131 @@
+aside {
+  width: 260px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #1D1D2A;
+  margin: auto;
+  overflow-y: scroll;
+  z-index: 1020;
+  overflow-x: hidden;
+}
+
+
+aside::-webkit-scrollbar {
+  display: none;
+}
+
+aside .form{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+
+aside .form button{
+  margin-top: 10px;
+  background: #5CAB7D;
+}
+
+aside .form div{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+aside .dnd-wrap{
+  margin-left: 25px;
+}
+
+aside .dndnode{
+  
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding: 15px;
+  width: 140px;
+  border: 1px solid #d5d5d5;
+  text-align: center;
+  background: #1D1D2A;
+  box-shadow: 0 0 0 1px #4ADBC8;
+}
+
+.tag-group{
+  display: inline;
+  margin: 1px;
+  margin-left: 5px;
+  max-width: 93%;
+}
+
+.tag {
+  background: #75D04A;
+  border-radius: 4px;
+  color: rgb(32, 32, 32);
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+
+
+.close-tag{
+  position: absolute;
+  right: -15px;
+  bottom: 1.5px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  height: 13px;
+  width: 13px;
+}
+
+aside input{
+  width: 210px;
+  outline: none;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color:#1D1D2A ;
+  font-size: 14px;
+  color:  #d5d5d5; 
+  border: 1px solid #d5d5d5;
+  box-shadow: 0 0 0 2px #4ADBC8;
+}
+
+aside textarea {
+  
+  width: 210px;
+  outline: none;
+  padding: 8px;
+  padding-bottom: 250px;
+  border-radius: 10px;
+  border: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color:#1D1D2A ;
+  font-size: 14px;
+  color:  #d5d5d5; 
+  border: 1px solid #d5d5d5;
+  box-shadow: 0 0 0 2px #4ADBC8;
+}
+
+.text .map-title input{
+  height: 40px;
+}
+
+.text .description input{
+  height: 400px;
+}
+
+
+
+
+

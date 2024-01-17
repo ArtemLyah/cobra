@@ -1,0 +1,50 @@
+.reactflow-wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.react-flow > .react-flow__panel.react-flow__attribution.bottom.right {
+  display: none;
+}
+
+.react-flow__node{
+  display: flex;
+  justify-content: center;
+}
+
+.react-flow__node p{
+  margin: 0;
+}
+
+
+.flex-box {
+  display: flex;
+}
+
+.highlight {
+  border:2px solid #22c6b0;
+  box-shadow: 0 10px 38px 0 rgba(112, 111, 111, 0.37);
+}
+
+.ungroup-menu {
+  background: #1D1D2A;
+  border-style: solid;
+  color: #d5d5d5 ;
+  border: 1px solid #5CAB7D;
+  box-shadow: 10px 19px 20px rgba(0, 0, 0, 10%);
+  position: absolute;
+  z-index: 10;
+}
+
+.ungroup-menu button {
+  color: #d5d5d5;
+  border: none;
+  display: block;
+  padding: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+.ungroup-menu:hover {
+  background: rgb(34, 34, 51);
+}

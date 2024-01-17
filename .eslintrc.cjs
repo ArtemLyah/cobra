@@ -80,5 +80,7 @@ module.exports = {
     "@typescript-eslint/no-unsafe-argument": "warn",
     "@typescript-eslint/no-unsafe-return": "warn",
     "@typescript-eslint/no-redundant-type-constituents": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "eslint-disable-next-line": "off"
   },
 }

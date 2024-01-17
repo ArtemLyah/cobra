@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Button, CardBody, FormGroup, FormLabel, Image } from 'react-bootstrap';
 import { userService } from '../../../../api/services/users.service';
-import { User } from '../../../../api/types/user';
+import { User } from '../../../../api/types/user.type';
 import { useAuth } from '../../../../hooks/useAuth';
 import useCookie from '../../../../hooks/useCookie';
 
@@ -10,6 +10,7 @@ import { ZodType, z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { AxiosError } from 'axios';
 import { ServerException } from '../../../../api/exceptions/ServerException';
+import { authService } from '../../../../api/services/auth.service';
 
 type FormData = {
   avatar?: string;
@@ -24,7 +25,7 @@ export const ProfileCard = () => {
   const [ email, setEmail ] = useState('');
   const [ serverError, setServerError ] = useState('');
   const [ user, setUser ] = useState<User>(new User());
-  const { token } = useCookie();
+  const { token, setItem } = useCookie();
 
   const updateUser = async () => {
     const newUser = {
@@ -39,12 +40,18 @@ export const ProfileCard = () => {
     const response = await userService.update(token, newUser).catch((err: AxiosError<ServerException>) => {
       setServerError(err.response?.data.message ?? '');
     });
-    
+
+    const newToken = await authService.updateToken(token).catch((err: AxiosError<ServerException>) => {
+      setServerError(err.response?.data.message ?? '');
+    });
+
     if (!response) return;
+    if (!newToken) return;
 
     setServerError('');
     setUser(newUser);
 
+    setItem('token', newToken.access_token);
     setAuth({
       username,
       avatar,

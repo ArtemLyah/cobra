@@ -6,7 +6,7 @@ export class User {
   created_at: Date;
 }
 
-export class UserAuth {
+export class UserPayload {
   userId: string;
   username: string;
   avatar: string;

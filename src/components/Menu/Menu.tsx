@@ -13,7 +13,6 @@ const Menu = () => {
   const { logout } = useAuth();
 
   const { auth } = useAuth();
-
   const handleClick = () => setActive(!active);
 
   let classNames = 'main-nav-div';
@@ -63,7 +62,7 @@ const Menu = () => {
           </div>
           { user ? 
             <div id='profile-dropdown'>
-              <ProfileDropdown title={ auth?.userId ? auth?.avatar : 'https://api-private.atlassian.com/users/5595f3a5f502a4e89b7e9535cfb43b52/avatar' }>
+              <ProfileDropdown title={ auth?.userId ? auth?.avatar : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' }>
                 <div className='profile-links'>
                   <Link to='/profile'>My Profile</Link>
                   <Link to='/maps'>My Maps</Link>

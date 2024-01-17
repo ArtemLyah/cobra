@@ -4,7 +4,7 @@ import { authService } from '../api/services/auth.service';
 import AuthContext from '../context/AuthContext';
 import useCookie from './useCookie';
 import { jwtDecode } from 'jwt-decode';
-import { UserAuth } from '../api/types/user';
+import { UserPayload } from '../api/types/user.type';
 import { RegisterDTO } from '../api/dtos/register.dto';
 
 export const useAuth = () => {
@@ -14,14 +14,14 @@ export const useAuth = () => {
   const login = async (data: LoginDTO, rememberMe=true) => {
     const response = await authService.login(data);
     rememberMe && setItem('token', response.access_token);
-    setAuth(jwtDecode<UserAuth>(response.access_token));
+    setAuth(jwtDecode<UserPayload>(response.access_token));
     return response;
   };
   
   const signup = async (data: RegisterDTO, rememberMe=true) => {
     const response = await authService.register(data);
     rememberMe && setItem('token', response.access_token);
-    setAuth(jwtDecode<UserAuth>(response.access_token));
+    setAuth(jwtDecode<UserPayload>(response.access_token));
     return response;
   };
 

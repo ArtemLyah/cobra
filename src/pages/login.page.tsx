@@ -55,7 +55,7 @@ export const LogInPage = () => {
   return (
     <div className='form-page'>
       <form className='form-block' onSubmit={handleSubmit(submitData)}>
-        <header className='header'>
+        <header className='form-header'>
           <h3>Log In</h3>
         </header>
 

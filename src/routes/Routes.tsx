@@ -10,6 +10,7 @@ import RegistrationPage from '../pages/registration.page';
 import LogInPage from '../pages/login.page';
 import PageBuilder from './PageBuilder';
 import RoadmapPage from '../pages/roadmap/roadmap.page';
+import RoadmapEditor from '../pages/roadmap-editor/roadmap-editor';
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
       PageBuilder({
         path: '/',
         page: <HomePage/>,
-        //requireAuth: true,
+        requireAuth: true,
         menu: true,
         footer: true,
       }),
@@ -48,10 +49,15 @@ export const router = createBrowserRouter([
         footer: true,
       }),
       PageBuilder({
-        path: '/roadmap',
+        path: '/roadmaps/:roadmapId',
         page: <RoadmapPage/>,
         menu: true,
         footer: true,
+      }),
+      PageBuilder({
+        path: '/roadmaps/editor',
+        page: <RoadmapEditor/>,
+        requireAuth: false,
       }),
       {
         path: 'auth',

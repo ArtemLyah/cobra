@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './slides/header/header';
 import Description from './slides/description/description';
 import Sidebar from './slides/sidebar/sidebar';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useParams } from 'react-router';
+import { roadmapService } from '../../api/services/roadmap.service';
+import { useCookie } from '../../hooks/useCookie';
+import { FullRoadmapResponse } from '../../api/responses/fullRoadmap.response';
 
 const RoadmapPage = () => {
+  const roadmapId = useParams().roadmapId ?? '-1';
+  const { token } = useCookie();
+
+  const [ roadmap, setRoadmap ] = useState<FullRoadmapResponse>();
+
+  const getRoadmap = async () => {
+    try {
+      await roadmapService.getWithMap(token, roadmapId).then((response: FullRoadmapResponse) => {
+        setRoadmap(response);
+      });
+    } catch (e) {
+      setError('error occurred');
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    getRoadmap();
+  }, []);
+  
+  console.log(roadmap);
+
   return (
     <Container className='roadmap-page'>
       <Row>
