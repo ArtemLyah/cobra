@@ -1,5 +1,6 @@
-.slick-slider {
-    display: flex;
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
 }
 
 @media (max-width: 820) {

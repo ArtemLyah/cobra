@@ -3,6 +3,7 @@
     margin: 0;
     padding: 4vh 4.23vw;
 }
+
 .description__content{
     text-align: justify;
     text-justify: inter-word; 
@@ -10,7 +11,9 @@
     font-size: 1.5vw;
     font-style: normal;
     font-weight: 400;
+    min-height: 300px;
 }
+
 .description__long__text{
     color: #FFF;
     font-size: 2.34vw;
@@ -18,7 +21,6 @@
     font-weight: 400;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 0;
     display: inline-block;
     transition: height 0.3s ease;
 }
@@ -35,11 +37,10 @@
     width: 100%;
 }
 .description__image{
-    background-image: url('./images/imageRoadmap.jpg');
-    height: 121.9vh;
-    width: 100%;
-    background-size: 100% 100%;
-    object-fit: cover;
+    margin-left: -120px;
+    height: 95vh;
+    width: 90vw;
+    
 }
 
 .description__coment{

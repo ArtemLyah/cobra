@@ -113,9 +113,6 @@ const DiagramFlow = () => {
     };
   }, []);
 
-
-
- 
   return (
     <div className='flex-box'>
       <div style={{ position: 'absolute', marginLeft: `${ isOpen ? '0px' : '-260px' }`, transition: 'margin-left 0.3s', zIndex: 10 }} className='sidebar' >
@@ -163,12 +160,13 @@ const DiagramFlow = () => {
           panOnScroll={true}
           panOnScrollMode={PanOnScrollMode.Free}
           zoomOnDoubleClick={true}
+          style={{ background: '#d5d5d5' }}
         >
           <Controls style={{ position: 'absolute', left: `${ isOpen ? '260px' : '0px' }`, transition: '0.3s' }} />
           { nodeMenu && <ContextNodeMenu {...nodeMenu} /> }
           { edgeMenu && <ContextEdgeMenu {...edgeMenu} /> }
           { ungroupMenu && <UngroupMenu onClick={onPaneClick} {...ungroupMenu} /> }
-          <Background />
+          <Background offset={1.5} color='#1d1d2a' />
         </ReactFlow>
       </div>
     </div>

@@ -47,46 +47,45 @@
 }
 .homeInfo__info_context_text{
     color: #1D1D2A;
-    font-size: 45px;
+    font-size: 32px;
     font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
 }
 .homeInfo__info_context_maps{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .homeInfo__info_context_maps .btn{
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    padding: 0 15px;
-    color: #5CAB7D;
-    font-size: 15px;
-    height: 40px;
-    width: 130px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 0 15px;
+  color: #5CAB7D;
+  font-size: 15px;
+  height: 40px;
+  width: 130px;
 }
 .homeInfo__info_context_miniMaps{
-    display: inline;
+  display: inline;
 }
-.homeInfo__info_context_maps_angle{
-    position: relative;
-    color: #1D1D2A;
-    font-size: 50px;
-    font-weight: 600;
-    width: 32px;
-    margin-right: 2rem;
-}
-
-.fa-angle-left {
-    position: absolute;
-    top: 1.5rem;
-    left: -1rem;
-    cursor: pointer;
+.homeInfo__info_context_maps_angle {
+  position: absolute;
+  color: #1D1D2A;
+  font-size: 50px;
+  font-weight: 600;
+  width: 32px;
+  top: 20%;
+  cursor: pointer;
+  z-index: 10;
 }
 
-.fa-angle-right {
-    position: absolute;
-    top: 1.5rem;
-    cursor: pointer;
+.homeInfo__info_context_maps_angle.right-arrow {
+  right: 0;
+}
+
+.homeInfo__info_context_maps_angle.left-arrow {
+  left: 0;
 }
 
 @media (max-width: 1360px){

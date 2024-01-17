@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { Node, Edge } from 'reactflow';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -50,7 +50,7 @@ export const useCopyPasteComponent = ({ nodes, edges, setNodes, setEdges }: Copy
   });
 
   useEffect(() => {
-    if (copyPressed && document.activeElement?.tagName !== 'INPUT') {
+    if (copyPressed && document.activeElement?.tagName === 'DIV') {
       console.log(nodes);
       const copyNodes = nodes.filter((node) => node.selected);
       const copyEdges = edges.filter((edge) => edge.selected);
@@ -70,46 +70,41 @@ export const useCopyPasteComponent = ({ nodes, edges, setNodes, setEdges }: Copy
           return;
         }
         const copyNodes = copyObject.copyNodes;
-        const [ copyEdges, setCopyEdges ] = useState(copyObject.copyEdges);
+        const copyEdges = copyObject.copyEdges;
+        const mapNodes = new Map();
+
+        console.log('nodes', copyNodes);
+        console.log('edges', copyEdges);
         
-        const newNodes = copyNodes.map((node) => {
-
-          const newNodeId = uuidv4();
-
-          setCopyEdges((edges) => {
-            return edges.map((edge) => {
-              const newSource = edge.source === node.id ? newNodeId : edge.source;
-              const newTarget = edge.target === node.id ? newNodeId : edge.target;
-              return {
-                ...edge,
-                source: newSource,
-                target: newTarget,
-              };
-            });
-          });
-
-          const parentNode = node.parentNode !== undefined 
-            ? uuidv4()
-            : nodes.find(( parNode ) => parNode.id === node.parentNode)?.id;
-          
+        let newNodes = copyNodes.map((node) => {
+          const newNodeId = uuidv4() as string;
+          mapNodes[node.id] = newNodeId;
           return {
             ...node,
             id: newNodeId,
             position: {
-              x: node.position.x+10,
-              y: node.position.y+10,
+              x: node.position.x + 10,
+              y: node.position.y + 10,
             },
-            selected: true,
-            parentNode,
           };
         });
+
+        console.log(copyNodes);
         console.log(newNodes);
-        const newEdges = copyEdges.map<Edge>((edge) => {
-          
+
+        const newEdges = copyEdges.map((edge) => {
+          edge.source = mapNodes[edge.source] ?? edge.source;
+          edge.target = mapNodes[edge.target] ?? edge.target;     
           return {
             ...edge,
-            id: `e${edge.target}-${edge.source}`,
-            selected: true,
+            id: `${edge.source}-${edge.target}`,
+          };
+        });
+
+        newNodes = newNodes.map((node) => {
+          return {
+            ...node,
+            parentNode: mapNodes[node.parentNode ?? ''] ?? node.parentNode,
           };
         });
 
@@ -144,6 +139,4 @@ export const useCopyPasteComponent = ({ nodes, edges, setNodes, setEdges }: Copy
       });
     }
   }, [ copyPressed, pastePressed ]);
-  
-  return <div />;
 };

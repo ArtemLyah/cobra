@@ -1,12 +1,14 @@
 .roadmap-list-item {
     display: flex;
-    color: #383837;
+    color: #d5d5d5;
     border: 4px solid #4ADBC8;
     border-radius: 20px;
     width: 787px;
     height: 228px;
     margin-bottom: 1rem;
     padding: 3vh;
+    background: linear-gradient(153deg, rgba(29,29,42,1) 0%, rgba(56,56,56,1) 50%, rgba(51,77,39,1) 100%);
+
 }
 
 .description-container {

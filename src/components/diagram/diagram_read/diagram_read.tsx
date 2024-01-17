@@ -3,9 +3,9 @@ import ReactFlow, {
   ReactFlowProvider,
   Controls,
   Background,
-  PanOnScrollMode,
   Node,
   Edge,
+  ConnectionMode,
 } from 'reactflow';
 
 
@@ -21,6 +21,8 @@ import TextNode from '../nodes/TextNode';
 //styles import
 import 'reactflow/dist/style.css';
 import '../diagram.css';
+import '../components/styles/squareSettingsMenu.css';
+import '../components/styles/dataMenu.css';
 
 //declare all node types
 const nodeTypes = {
@@ -38,7 +40,6 @@ interface Structure{
   nodes: Node[],
   edges: Edge[]
 }
-
 
 const Flow = ({ nodes, edges }: Structure) => {
 
@@ -90,31 +91,34 @@ const Flow = ({ nodes, edges }: Structure) => {
   }, []);
 
   return (
-    <div className='flex-box'>
-      <div>
-        <ReactFlow 
-          disableKeyboardA11y={true}
-          ref={reactFlowRef}
-          nodes={nodes}
-          edges={edges}
-          nodeTypes={nodeTypes}
-          defaultViewport={defaultViewport}
-          fitView
-          onNodeClick={onNodeClick}
-          onPaneClick={onPaneClick}
-          panOnScroll={true}
-          panOnScrollMode={PanOnScrollMode.Free}
-          zoomOnDoubleClick={true}
-          nodesDraggable={false}
-          nodesConnectable={false}
-          elementsSelectable={false}
-          connectOnClick={false}
-        >
-          <Controls/>
-          { nodeMenu && <ContextMenu {...nodeMenu} /> }
-          <Background />
-        </ReactFlow>
-      </div>
+    <div style={{ 
+      width: '90vw',
+      height: '95vh',
+      border: '5px solid #75D04A',
+      borderRadius: '10px',
+    }}>
+      <ReactFlow 
+        style={{ background: '#d5d5d5' }}
+        connectionMode={ConnectionMode.Loose}
+        disableKeyboardA11y={true}
+        ref={reactFlowRef}
+        nodeTypes={nodeTypes}
+        nodes={nodes}
+        edges={edges}
+        defaultViewport={defaultViewport}
+        fitView
+        onNodeClick={onNodeClick}
+        onPaneClick={onPaneClick}
+        zoomOnDoubleClick={true}
+        nodesDraggable={false}
+        nodesConnectable={false}
+        //elementsSelectable={false}
+        connectOnClick={false}
+      >
+        <Controls/>
+        { nodeMenu && <ContextMenu {...nodeMenu} /> }
+        <Background color='#1d1d2a' />
+      </ReactFlow>
     </div>
   );
 };

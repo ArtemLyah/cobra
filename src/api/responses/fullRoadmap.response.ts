@@ -1,11 +1,11 @@
-import { RoadmapDifficultyEnum } from '../types/roadmapDifficulty.type';
-import { Tag } from '../types/tag.type';
+import { MapStructure } from '../types/mapStructure.type';
+import { RoadmapResponse } from './roadmap.response';
 
-export class FullRoadmapResponse {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: RoadmapDifficultyEnum;
-  tags: Tag[];
-  created_at: Date;
+export class FullRoadmapResponse extends RoadmapResponse {
+  map: MapStructure;
+  owner: {
+    id: string;
+    username: string;
+    avatar: string;
+  };
 }

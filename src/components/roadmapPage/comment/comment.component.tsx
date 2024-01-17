@@ -16,7 +16,6 @@ const Comment = (props: Props) => {
   const { 
     userImage='https://via.placeholder.com/86x86',
     usersName='Anonymous',
-    date='01/01/2021',
     rating= 5,
     comment='Some good review. Some good review. Some good review. Some good review. Some good review. Some good review. Some good review. Some good review. Some good review. Some good review. ',
   } = props;
@@ -30,7 +29,6 @@ const Comment = (props: Props) => {
         <div className='comment__content__testimonial'>
           <div className='comment__content__testimonial__text'>
             <div className='comment__content__testimonial__text__userName'>{usersName}</div>
-            <div className='comment__content__testimonial__text__date'>{date}</div>
           </div>
           <div className='comment__content__testimonial__rating'>
             <ReactStars

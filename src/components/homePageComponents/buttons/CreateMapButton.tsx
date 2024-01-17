@@ -20,16 +20,15 @@ const CreateMapButton = () => {
     backgroundColor,
     borderRadius: '0',
     border: '4px solid #4ADBC8',
-    padding: '0 38px',
     color: '#D5D5D5',
-    fontSize: '45px',
-    height: '90px',
-    width: '360px',
+    fontSize: '32px',
+    height: '70px',
+    width: '250px',
     transition: 'background-color 0.3s ease-in-out',
   };
 
   return (
-    <Link to='/'>
+    <Link to='/roadmaps/editor'>
       <button className='btn'
         style={styles}
         onMouseEnter={handleMouseEnter}

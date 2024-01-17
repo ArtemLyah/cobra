@@ -3,56 +3,96 @@ import { Container, Row, Col } from 'react-bootstrap';
 import ReactStars from 'react-rating-stars-component';
 import Comment from '../../../../components/roadmapPage/comment/comment.component';
 import RoadmapCard from '../../../../components/roadmapCard/roadmapCard';
+import { MapStructure } from '../../../../api/types/mapStructure.type';
+import DiagramRead from '../../../../components/diagram/diagram_read/diagram_read';
+import { useParams } from 'react-router';
+import { reviewsService } from '../../../../api/services/reviews.service';
+import { useCookie } from '../../../../hooks/useCookie';
+import { ReviewsResponse } from '../../../../api/responses/reviews.response';
+import { ReviewCreateDTO } from '../../../../api/dtos/review.create';
+import { ServerException } from '../../../../api/exceptions/ServerException';
+import { AxiosError } from 'axios';
+import { useAuth } from '../../../../hooks/useAuth';
 
 import './description.css';
 
 type Props = {
-    initialText: string
-}
-
-type CommentData = {
-  usersName: string;
-  userImage: string;
-  rating: number;
-  comment: string;
+    description: string;
+    map: MapStructure;
+    reviews: ReviewsResponse[];
 };
 
+
 const Description = (props: Props) => {
-  const { 
-    initialText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum...', 
-  } = props;
-  const [ commentText, setCommentText ] = useState('');
-  const [ commentRating, setCommentRating ] = useState(0);
+  const description = props.description;
+  const { auth } = useAuth();
+  const [ reviews, setReviews ] = useState<ReviewsResponse[]>(props.reviews);
+
+  const UserComment = reviews.filter((review) => review.user.id === auth?.userId);
+
+  const hasComment = UserComment.length > 0;
+
+  const [ commentText, setCommentText ] = useState<string>(hasComment ? UserComment[0].text : '');
+  const [ commentRating, setCommentRating ] = useState<number>(hasComment ? UserComment[0].rate : 0);
   const [ showFullText, setShowFullText ] = useState(false);
   const maxTextLength = 350;
-  const [ comments, setComments ] = useState<CommentData[]>([]);
-  
-  
 
-  const handleCommentSubmit = () => {
+  const roadmapId = useParams().roadmapId ?? '-1';
+  const { token } = useCookie();
+
+
+  const handleCommentSubmit = async () => {
     if (commentRating > 0 && commentText.trim() !== '') {
-      const newComment: CommentData = {
-        usersName: 'Anonymous', 
-        userImage:
-          'https://www.hotelbooqi.com/wp-content/uploads/2021/12/128-1280406_view-user-icon-png-user-circle-icon-png.png',
-        rating: commentRating,
+
+      const reviewData: ReviewCreateDTO = {
+        rate: commentRating,
         comment: commentText,
       };
 
-      setComments((prevComments) => [ ...prevComments, newComment ]);
+      const response = await reviewsService.create(token, roadmapId, reviewData)
+        .catch((e: AxiosError<ServerException>) => console.log(e));
+
+      if (!response) return;  
+      
+      if (UserComment.length > 0) {
+        setReviews((reviews) =>
+          reviews.map((review) => 
+            review.userId === UserComment[0].userId ? {
+              ...review,
+              reviewData,
+            } : review
+          )
+        );
+      } else {
+        if (!auth) return;
+
+        setReviews(reviews.concat([{
+          userId: auth.userId,
+          roadmapId: roadmapId,
+          rate: commentRating,
+          text: commentText,
+          user: {
+            id: auth?.userId,
+            username: auth?.username,
+            avatar: auth?.avatar,
+          },
+        }]));
+      }
+
       setCommentText('');
       setCommentRating(0);
+
+
     } else {
       console.log('Please provide both rating and comment text.');
     }
   };
 
   const ratingChanged = (newRating: number) => {
-    console.log(newRating);
     setCommentRating(newRating);
   };
 
-  const renderText = showFullText || initialText.length <= maxTextLength ? initialText : initialText.slice(0, maxTextLength);
+  const renderText = showFullText || description.length <= maxTextLength ? description : description.slice(0, maxTextLength)+'...';
 
 
   return (
@@ -60,12 +100,14 @@ const Description = (props: Props) => {
       <Row>
         <Col>
           <div className='description__content'>{renderText}</div>
-          {initialText.length > maxTextLength && 
+          {description.length > maxTextLength && 
             <button className='description__button' onClick={() => setShowFullText((prev) => !prev)}>
               {showFullText ? 'Read less' : 'Read more'}
             </button>
           }
-          <div className='description__image'></div>
+          <div className='description__image'>
+            <DiagramRead nodes={props.map.nodes} edges={props.map.edges} />
+          </div>
 
           <div className="related-maps">
             <span>Related maps</span>
@@ -97,8 +139,9 @@ const Description = (props: Props) => {
                   <ReactStars
                     count={5}
                     onChange={ratingChanged}
+                    value={commentRating}
                     size={30}
-                    isHalf={true}
+                    isHalf={false}
                     emptyIcon={<i className="far fa-star"></i>}
                     halfIcon={<i className="fa fa-star-half-alt"></i>}
                     fullIcon={<i className="fa fa-star"></i>}
@@ -109,13 +152,13 @@ const Description = (props: Props) => {
                 </button>
               </div>
             </div>
-            {comments.map((comment, index) => 
+            {reviews?.map((comment, index) => 
               <Comment
                 key={index}
-                usersName={comment.usersName}
-                userImage={comment.userImage}
-                rating={comment.rating}
-                comment={comment.comment}
+                userImage={comment.user.avatar}
+                usersName={comment.user.username}
+                rating={comment.rate}
+                comment={comment.text}
               />
             )}
           </div>

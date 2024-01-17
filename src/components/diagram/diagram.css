@@ -48,3 +48,11 @@
 .ungroup-menu:hover {
   background: rgb(34, 34, 51);
 }
+
+.react-flow__edge-path {
+  stroke: black;
+}
+
+.react-flow__edgeupdater {
+  color: black;
+}
