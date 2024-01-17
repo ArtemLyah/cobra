@@ -15,64 +15,56 @@
 }
 /*--------------------------------*/
 
-.header{
-    background: 
-                url("https://www.bigdatalab.com.ua/wp-content/uploads/2021/04/hitesh-choudhary-D9Zow2REm8U-unsplash.jpg"),
-                linear-gradient(
-                    rgba(0, 0, 0, 0.4), 
-                    rgba(0, 0, 0, 0.4)
-                );
+.roadmapHeader{
     background-blend-mode: darken;
     background-size: cover;
     min-width: 100%;
-    height: 806px;
+    height: max-content;
+    height: 8;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
 }
 
 div.roadmap-page.container > div:nth-child(1) > div > div > div {
-    height: 18.27vw;
+    height: 16.27vw;
 }
 
 .roadmap-page.container .row {
     display: flex;
-    /* width: 100%; */
     height: 100%;
 }
 
-.header {
+.roadmapHeader {
+    margin: 1rem 0 0 0;
     text-align: center;
+    background-color: rgb(29, 29, 42);
+    border-radius: 20px;
 }
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     padding-left: 0;
     padding-right: 0;
 }
 
-.header__info {
-    /*background: rgb(0,0,0);*/
-    background: linear-gradient(0deg, rgba(19, 19, 19, 0.97) 59%, rgba(29, 29, 42, 0.00) 100%);
-    /*box-shadow: outset 0px 0px 40px 0px black;*/
-}
-
 /*------------------------*/
 .general {
     color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
 .general .map__title {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     font-size: 4vw;
     font-weight: 600;
-    height: 30%;
 }
 
 .general__info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 69%;
+    width: 100%;
 }
 
 .general__info #btn-col {
@@ -87,7 +79,6 @@ div.roadmap-page.container > div:nth-child(1) > div > div > div {
     color: #FFFFFF;
     background-color: #75D04A;
     height: fit-content;
-    /* width: ; */
     font-size: 3vw;
 }
 
@@ -108,36 +99,34 @@ div.roadmap-page.container > div:nth-child(1) > div > div > div {
 }
 /*------------------------*/
 .rate{
-    background: linear-gradient(270deg, #5CAB7D 0%, rgba(92, 171, 125, 0.00) 100%);
     background-size: cover;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
-/*../../../../components/roadmapPageComponents/images/Rectangle 39.png*/
 .rate__info{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
 }
 .rate__info__union{
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.633578431372549) 32%, rgba(255,255,255,1) 100%);
+    background: #FFF170;
     -webkit-background-clip: text;
     color: transparent;
-    font-size: 5vw;
+    font-size: 4vw;
 }
 div.roadmap-page.container > div:nth-child(1) > div > div > div > div > div > div.rate.col-sm-5 > div.rate__info > i{
     display: flex;
     align-items: center;
 }
 div.roadmap-page.container > div:nth-child(1) > div > div > div > div > div > div.rate.col-sm-5{
-    padding: 2.7vh 2.6vw 2.7vh 5.9vw;
+    padding: 2.7vh 2.3vw 2.7vh 15.6vw;
 }
 
 .rate__info__text{
     color: #FFF170;
     text-align: center;
-    font-size: 4.688vw; 
+    font-size: 3.5vw; 
     font-style: normal;
     font-weight: 700;
 }
@@ -152,14 +141,14 @@ div.roadmap-page.container > div:nth-child(1) > div > div > div > div > div > di
     align-items: center;
     color: #FFF;
     text-align: center;
-    font-size: 1.83vw;
+    font-size: 1.5vw;
     font-style: normal;
     font-weight: 700;
 }
 .reviews__number{
     color: #FFF;
     text-align: center;
-    font-size: 2.74vw;
+    font-size: 2vw;
     font-style: normal;
     font-weight: 700;
 }

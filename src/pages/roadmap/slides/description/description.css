@@ -1,13 +1,13 @@
 .description {
-    /* width: 1285px; */
     height: max-content;
-    /*background-image: url('https://via.placeholder.com/1285x806');*/
     margin: 0;
     padding: 4vh 4.23vw;
 }
 .description__content{
+    text-align: justify;
+    text-justify: inter-word; 
     color: #FFF;
-    font-size: 2.4vw;
+    font-size: 1.5vw;
     font-style: normal;
     font-weight: 400;
 }
@@ -27,7 +27,7 @@
 }
 .description__button{
     color: #7AE5D7;
-    font-size: 2.93vw;
+    font-size: 2vw;
     font-style: normal;
     font-weight: 800;
     display: flex;
@@ -94,3 +94,92 @@
     padding: 8px 16px;
     cursor: pointer;
   }
+/*------------------------------------*/
+.related-maps {
+  margin-top: 1rem;
+}
+
+.related-maps span {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.related-maps span {
+  font-size: 2vw;
+  margin: 0 1vw 1vh 0;
+  color: #FFF;
+  font-weight: 600;
+}
+
+.related-maps-list {
+  display: flex;
+}
+
+.related-maps-list .roadmapCard {
+  margin: 0 0 2vh 0;
+  background-size: 100% 100%;
+  object-fit: cover;
+}
+
+.related-maps-list .roadmapCard:nth-child(2) {
+  margin: 0 1vw 2vh 1vw;
+}
+
+.related-maps-list .roadmapCard .roadmapCard__name {
+  color: white;
+  font-size: 1.6vw;
+  font-weight: 600;
+}
+
+.related-maps-list .roadmapCard__moreInfo {
+  width: 100%;
+}
+
+.related-maps-list .roadmapCard__moreInfo .btn {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 0px 15px;
+  color: rgb(92, 171, 125);
+  font-size: 1vw;
+  height: 3.05vw;
+  width: 8vw;
+}
+
+.related-maps-list .roadmapCard__moreInfo_rating_union {
+  display: flex;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  color: #FFF170;
+  font-size: 1.8vw;
+  filter: drop-shadow(0 12px 10px rgba(0,0,0,.5));
+}
+
+.related-maps-list .roadmapCard__moreInfo_rating_number {
+  display: flex;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  color: #FFF170;
+  font-size: 1.6vw;
+  font-weight: 700;
+  filter: drop-shadow(0 12px 10px rgba(0,0,0,.5));
+  margin-right: 5px;
+}
+/*-------------------------------------*/
+
+@media (min-width: 640px) {
+  .related-maps-list .roadmapCard {
+    height: 10vw;
+    width: 18.91vw;
+    padding: 1.52vw;
+  }
+}
+
+@media (max-width: 1100px) {
+  .related-maps-list {
+    flex-wrap: wrap;
+  }
+}

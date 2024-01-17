@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler } from 'react';
+import React, { MouseEventHandler } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
@@ -38,7 +38,7 @@ const SamplePrevArrow: React.FC<ArrowProps>  = (props) => {
 };
 
 const Carousel: React.FC<Props> = (props) => {
-  const { data, showToggleHeart } = props;
+  const { data } = props;
   
   const sliderSettings = {
     dots: true,

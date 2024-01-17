@@ -20,6 +20,7 @@
 .map-description {
     font-size: 1rem;
     text-align: justify;
+    text-justify: inter-word;
 }
 
 .interaction {

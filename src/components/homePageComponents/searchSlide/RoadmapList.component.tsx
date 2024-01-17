@@ -4,9 +4,7 @@ import { Container } from 'react-bootstrap';
 
 import './styles/roadmapList.css';
 
-type Props = {}
-
-const RoadmapList = (props: Props) => {
+const RoadmapList = () => {
   return (
     <Container className='roadmap-list-container'>
       <RoadmapListItem

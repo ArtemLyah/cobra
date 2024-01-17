@@ -36,7 +36,6 @@ const RoadmapPage = () => {
       <Row>
         <Col>
           <Header 
-            backgroundImage='https://www.bigdatalab.com.ua/wp-content/uploads/2021/04/hitesh-choudhary-D9Zow2REm8U-unsplash.jpg' 
             name='Python Developer' 
             rating={4.7} 
             date='27 October 2023' 
