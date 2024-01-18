@@ -18,9 +18,7 @@ export const DefaultNodeMenu = ({
   return ( 
     <div className='default-settings'>
       <div className="default-settings-block">
-        <p className='node-number'>
-          {node?.type ?? 'node'}: { node?.id }
-        </p>
+        <p className='node-number'>{node?.type ?? 'node'}</p>
       </div>
       <div className='default-settings-grid'>
         <div className='default-settings-item'>

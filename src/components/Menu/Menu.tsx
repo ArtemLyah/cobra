@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import SignUpButton from './buttons/SignUpButton';
 import LogInButton from './buttons/LogInButton';
 import ProfileDropdown from './dropdown/ProfileDropdown';
-import Dropdown from './dropdown/Dropdown';
 import { Link, NavLink } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 
@@ -40,24 +39,10 @@ const Menu = () => {
               <NavLink to='/profile'>Profile</NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink to='/about' >About</NavLink>
+              <NavLink to='/roadmaps/editor' >Create roadmap</NavLink>
             </li>
-            { user ?
-              <li className='nav-item'>
-                <Dropdown title='My Maps'>
-                  <div className="dropdown-links">
-                    <Link to='/map1'>Map 1</Link>
-                    <Link to='/map2'>Map 2</Link>
-                    <Link to='/map3'>Map 3</Link>
-                    <Link to='/maps'>Other</Link>
-                  </div>
-                </Dropdown>
-              </li>
-              :
-              <></>
-            }
             <li className='nav-item'>
-              <NavLink to='/faq' >FAQ</NavLink>
+              <NavLink to='/about' >About</NavLink>
             </li>
           </div>
           { user ? 
@@ -65,7 +50,7 @@ const Menu = () => {
               <ProfileDropdown title={ auth?.userId ? auth?.avatar : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' }>
                 <div className='profile-links'>
                   <Link to='/profile'>My Profile</Link>
-                  <Link to='/maps'>My Maps</Link>
+                  <Link to='/'>My Maps</Link>
                   <Link to='/presentation' onClick={logout} >Log Out</Link>
                 </div>
               </ProfileDropdown>

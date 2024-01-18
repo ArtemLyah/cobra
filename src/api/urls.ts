@@ -25,6 +25,13 @@ class URL {
   GET_FULL_ROADMAP = (roadmapId: string) => this.ROADMAPS+`/${roadmapId}/map`;
   CREATE_ROADMAP = this.ROADMAPS;
   CREATE_FULL_ROADMAP = this.ROADMAPS+'/newMap';
+  GET_MY_ROADMAPS = this.ROADMAPS+'/myMaps';
+  SET_USER_STATE = (roadmapId: string) => this.ROADMAPS+`/${roadmapId}/setState`;
+  REMOVE_USER_STATE = (roadmapId: string) => this.ROADMAPS+`/${roadmapId}/removeState`;
+
+  private REVIEWS = this.API+'/reviews';
+  CREATE_REVIEW = (roadmapId: string) => this.REVIEWS+`/${roadmapId}`;
+  GET_REVIEWS = (roadmapId: string) => this.REVIEWS+`/${roadmapId}`;
 }
 
 export const url = new URL();

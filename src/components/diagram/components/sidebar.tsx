@@ -70,6 +70,11 @@ export const Sidebar = () => {
 
     const nodes = getNodes();
     const edges = getEdges();
+    // console.log(title);
+    // console.log(description);
+    // console.log(difficulty);
+    // console.log(tags);
+    // console.log(nodes, edges);
 
     await roadmapService.createWithMap(token, {
       title,

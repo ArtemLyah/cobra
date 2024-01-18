@@ -4,7 +4,6 @@ import { createGroupNode } from '../nodes/GroupNode';
 
 
 export const initialNodes: Node[] = [
- 
 ];
 
 export const initialEdges: Edge[] = [

@@ -64,9 +64,8 @@ export const ContextEdgeMenu = ({
           markerStart: marker,
         },
       },
-    });
-    
-    
+      
+    });    
   };
 
   const handleMarkerEnd = ( marker_label: string ) => {
@@ -91,9 +90,7 @@ export const ContextEdgeMenu = ({
       <div className='default-settings'>
 
         <div className="default-settings-block">
-          <p className='node-number'>
-            {'Edge'}: { edge?.id.slice(16) }
-          </p>
+          <p className='node-number'>Edge</p>
         </div>
 
         <div className="default-settings-block">
@@ -214,6 +211,55 @@ export const ContextEdgeMenu = ({
             </select>
           </div>
         </div> 
+
+        <div className="default-settings-block">
+          <label>Thickness</label>
+
+          <label htmlFor='thickness-small'>Small</label>
+          <input 
+            id="thickness-small" 
+            type="radio" 
+            name="thickness" 
+            checked={edge?.style?.strokeWidth === 1}
+            onClick={() => {
+              setEdgeItem({
+                style: {
+                  strokeWidth: 1,
+                },
+              });
+            }}
+          />
+          
+          <label htmlFor='thickness-medium'>Medium</label>
+          <input 
+            id="thickness-medium" 
+            type="radio" 
+            name="thickness" 
+            checked={edge?.style?.strokeWidth === 3}
+            onClick={() => {
+              setEdgeItem({
+                style: {
+                  strokeWidth: 3,
+                },
+              });
+            }}
+          />
+
+          <label htmlFor='thickness-large'>Large</label>
+          <input 
+            id="thickness-large" 
+            type="radio" 
+            name="thickness"
+            checked={edge?.style?.strokeWidth === 5}
+            onClick={() => {
+              setEdgeItem({
+                style: {
+                  strokeWidth: 5,
+                },
+              });
+            }} 
+          />
+        </div>
       </div>
       
     </div>

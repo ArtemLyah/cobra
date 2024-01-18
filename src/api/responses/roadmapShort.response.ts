@@ -1,9 +1,8 @@
 import { RoadmapDifficultyEnum } from '../types/roadmapDifficulty.type';
 import { Tag } from '../types/tag.type';
 import { UserRoadmapState } from '../types/userRoadmapState.type';
-import { ReviewsResponse } from './reviews.response';
 
-export class RoadmapResponse {
+export class RoadmapShortResponse {
   id: string;
   title: string;
   description: string;
@@ -12,7 +11,5 @@ export class RoadmapResponse {
   reviewsAmount: number;
   created_at: Date;
   tags: Tag[];
-  reviews: ReviewsResponse[];
   userStates: UserRoadmapState[];
 }
-

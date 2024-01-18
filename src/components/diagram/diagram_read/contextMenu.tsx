@@ -11,35 +11,42 @@ export interface NodeMenuProps{
 }
 
 export const ContextMenu = ({ node }: NodeMenuProps) => {
+  console.log(node.sourcePosition);
   const content = node?.data.content;
+  console.log(content);
   return ( 
-    <div className="result-data-side">
-      <h2 className='topic-title'>{content.topicName}</h2>
-      <ReactMarkdown 
-        skipHtml 
-        remarkPlugins={[ remarkGfm ]}
-        rehypePlugins={[ rehypeRaw ]}
-        components={{
-          code (props: HTMLAttributes<HTMLElement>) {
-            const { children, className, ...rest } = props;
-            const match = /language-(\w+)/.exec(className || '');
-            return match 
-              ? 
-              <SyntaxHighlighter
-                {...rest}
-                PreTag="div"
-                language={match[1]}
-                style={style}
-              >
-                {String(children).replace(/\n$/, '')}
-              </SyntaxHighlighter>
-              : 
-              <code {...rest} className={className}>
-                {children}
-              </code>;
-          },
-        }}
-      >{ content.markdownText }</ReactMarkdown>
+    <div className='context-menu' style={{ zIndex: 10, height: '100%' }}>
+      <div className='data-settings'>
+        <div className="result-data-side">
+          <h2 className='topic-title'>{content.topicTitle}</h2>
+          <hr />
+          <ReactMarkdown 
+            skipHtml 
+            remarkPlugins={[ remarkGfm ]}
+            rehypePlugins={[ rehypeRaw ]}
+            components={{
+              code (props: HTMLAttributes<HTMLElement>) {
+                const { children, className, ...rest } = props;
+                const match = /language-(\w+)/.exec(className || '');
+                return match 
+                  ? 
+                  <SyntaxHighlighter
+                    {...rest}
+                    PreTag="div"
+                    language={match[1]}
+                    style={style}
+                  >
+                    {String(children).replace(/\n$/, '')}
+                  </SyntaxHighlighter>
+                  : 
+                  <code {...rest} className={className}>
+                    {children}
+                  </code>;
+              },
+            }}
+          >{ content.markdownText }</ReactMarkdown>
+        </div>
+      </div>  
     </div>
   );
 };

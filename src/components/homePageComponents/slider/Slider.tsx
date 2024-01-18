@@ -1,19 +1,11 @@
-import React, { MouseEventHandler } from 'react';
+import React, { Dispatch, MouseEventHandler, SetStateAction } from 'react';
 import Slider from 'react-slick';
+import RoadmapCardMini from '../roadmapCardMini/roadmapCardMini';
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
-import RoadmapCardMini from '../roadmapCardMini/roadmapCardMini';
 import './slider.css';
-
-type Props = {
-    data: Array<{
-        key: number;
-        name: string;
-        rating: number;
-        link: string;
-      }>;
-      showToggleHeart?: boolean;
-}
+import { MyRoadmapsResponse } from '../../../api/responses/myRoadmaps.response';
+import { RoadmapShortResponse } from '../../../api/responses/roadmapShort.response';
 
 type ArrowProps = {
     onClick?: MouseEventHandler<HTMLDivElement>
@@ -22,7 +14,7 @@ type ArrowProps = {
 const SampleNextArrow: React.FC<ArrowProps>  = (props) => {
   const { onClick } = props;
   return (
-    <div onClick={onClick} className="homeInfo__info_context_maps_angle left-arrow">
+    <div onClick={onClick} className="homeInfo__info_context_maps_angle right-arrow">
       <i className="fa fa-angle-right" aria-hidden="true"></i>
     </div>
   );
@@ -37,62 +29,38 @@ const SamplePrevArrow: React.FC<ArrowProps>  = (props) => {
   );
 };
 
-const Carousel: React.FC<Props> = (props) => {
-  const { data } = props;
-  
+interface CarouselProps {
+  data: RoadmapShortResponse[],
+  myMaps: MyRoadmapsResponse,
+  setMyMaps: Dispatch<SetStateAction<MyRoadmapsResponse>>
+}
+
+export const Carousel = ({ data, myMaps, setMyMaps }: CarouselProps) => {
+  const roadmapLength = data.length > 3 ? 3 : data.length;  
+
   const sliderSettings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: roadmapLength,
+    slidesToScroll: roadmapLength,
     initialSlide: 0,
-    centerMode: false,
     centerPadding: '25%',
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          infinite: true,
-          dots: true,
-          centerMode: true,
-          centerPadding: '10%',
-        },
-      },
-      {
-        breakpoint: 920,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 0,
-          infinite: true,
-          dots: true,
-          centerMode: true,
-          centerPadding: '22%',
-        },
-      },
-    ],
     nextArrow: 
-        <SampleNextArrow />,
+      <SampleNextArrow />,
     prevArrow: 
-        <SamplePrevArrow />,
+      <SamplePrevArrow />,
   };
 
   return (
-    <Slider {...sliderSettings}>
-      {data.map((item) => 
-        <RoadmapCardMini
-          link={item.link}
-          key={item.key}
-          name={item.name}
-          rating={item.rating}
-          toggleHeart={props.showToggleHeart}
-        />
-      )}
-    </Slider>
+    <div>
+      <Slider {...sliderSettings}>
+        { data.map((roadmap) => 
+          <div key={roadmap.id}>
+            <RoadmapCardMini roadmap={roadmap} myMaps={myMaps} setMyMaps={setMyMaps}/>
+          </div>
+        ) }
+      </Slider>
+    </div>
   );
 };
-
-export default Carousel;

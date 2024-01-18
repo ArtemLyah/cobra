@@ -32,13 +32,13 @@ export const createTextNode  = ({ id, position, ...props }: CreateNodeArgs): Nod
     data: {
       label: 'textNode',
       settings: {
-        color: '#d5d5d5',
+        color: '#292724',
         textSize: 14,
       },
     },
     style: { 
       zIndex: 1,
-      color: '#d5d5d5',
+      color: '#292724',
       fontSize: 14,
     },
   };
