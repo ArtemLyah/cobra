@@ -30,10 +30,7 @@ const homeInfo = ({
         <div className="homeInfo__info_context">
           <div className='homeInfo__info_context_text'>Top roadmaps</div>
           <div className='homeInfo__info_context_maps'>
-            <RoadmapCard  name={'Python Developer'} rating={5} />
-            <RoadmapCard  name={'Java Developer'} rating={4.5}/>
-            <RoadmapCard  name={'Node.js Developer'} rating={4.7}/>
-            <RoadmapCard  name={'Python Developer'} rating={4.5}/>
+            <RoadmapCard  name={'Backend Developer'} rating={5} />
           </div>
         </div>
         <div className='homeInfo__info_context'>

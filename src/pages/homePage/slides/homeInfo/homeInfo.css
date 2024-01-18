@@ -54,7 +54,7 @@
 }
 .homeInfo__info_context_maps{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .homeInfo__info_context_maps .btn{

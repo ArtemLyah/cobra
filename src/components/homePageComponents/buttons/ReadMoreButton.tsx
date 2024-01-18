@@ -15,7 +15,7 @@ const ReadMoreButton = () => {
   // };
 
   return (
-    <Link to='/'>
+    <Link to='/roadmaps/61350bf7-0a69-4793-b1f2-21f2ed0a8650'>
       <button className='btn'
         /*style={styles}*/>
             Read more
